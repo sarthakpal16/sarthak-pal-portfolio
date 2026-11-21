@@ -11,3 +11,22 @@ article:nth-child(3) .art{background:#e1e6df}
 .history{border-top:1px solid #bfc6b9;padding:30px 0}
 .history article{margin-bottom:24px}
 @media(max-width:700px){.intro figure{grid-row:1;width:100%}.cards{grid-template-columns:1fr}}
+
+#contact {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  padding: clamp(24px, 4vw, 54px);
+  margin-bottom: 32px;
+  border-radius: 4px;
+  background: #dce4d5;
+}
+#contact h2, #contact p { margin: 0; }
+#contact p + p { margin-top: 18px; }
+#contact a { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  #contact { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 460px) {
+  header { height: auto; flex-wrap: wrap; gap: 8px 20px; padding: 14px 0; }
+}
