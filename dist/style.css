@@ -30,3 +30,47 @@ article:nth-child(3) .art{background:#e1e6df}
 @media (max-width: 460px) {
   header { height: auto; flex-wrap: wrap; gap: 8px 20px; padding: 14px 0; }
 }
+
+.experience, .education {
+  border-top: 1px solid #bfc6b9;
+  padding: clamp(32px, 5vw, 68px) 0;
+}
+.experience { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.timeline { list-style: none; margin: 0 0 0 6px; padding: 0; }
+.timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-left: 1px solid #ac876f;
+  padding: 0 0 32px 26px;
+}
+.timeline li:last-child { border-color: transparent; padding-bottom: 0; }
+.timeline li::before {
+  content: ""; position: absolute; top: 12px; left: -5px;
+  width: 9px; height: 9px; border-radius: 50%; background: #995333;
+}
+.timeline h3, .degrees h3 { line-height: 1.15; }
+.timeline span, .timeline p { grid-column: 1 / -1; }
+.timeline span { margin-top: 5px; font-weight: 600; }
+.timeline small { grid-area: 1 / 2; align-self: center; color: #75462e; }
+.timeline p { margin: 6px 0 0; max-width: 50ch; }
+.degrees { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.degrees > div { padding: clamp(24px, 4vw, 46px); background: #294b39; color: #fff9e9; border-top: 5px double currentColor; }
+.degrees > div + div { background: #eadacc; color: #553c2f; }
+.degrees p { margin: 8px 0 28px; }
+#contact form { display: grid; gap: 14px; grid-row: span 2; }
+#contact label { display: grid; gap: 4px; font-weight: 600; }
+#contact input:not([hidden]), #contact textarea {
+  width: 100%; padding: 10px; font: inherit; color: inherit;
+  background: #fcfbf6; border: 1px solid #758373; border-radius: 3px;
+}
+#contact textarea { resize: vertical; }
+#contact button { justify-self: start; border: 0; font: inherit; cursor: pointer; }
+#contact :focus-visible { outline: 3px solid #944728; outline-offset: 3px; }
+.social { display: flex; gap: 20px; align-self: end; font-size: 14px; }
+@media (max-width: 800px) {
+  .experience, .degrees { display: block; }
+  .degrees > div + div { margin-top: 14px; }
+  .timeline li { display: flex; flex-direction: column; }
+  .timeline small { align-self: start; margin-top: 5px; }
+}
