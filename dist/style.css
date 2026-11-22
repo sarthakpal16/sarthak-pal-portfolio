@@ -8,8 +8,6 @@ article:nth-child(2) .art{background:#ecdccd}
 article:nth-child(3) .art{background:#e1e6df}
 .art svg{width:75%;height:72%;fill:none;stroke:#48664f;stroke-width:2.5}
 .art circle,.art rect{fill:#b56947;stroke:#f7f5ee}
-.history{border-top:1px solid #bfc6b9;padding:30px 0}
-.history article{margin-bottom:24px}
 @media(max-width:700px){.intro figure{grid-row:1;width:100%}.cards{grid-template-columns:1fr}}
 
 #contact {
@@ -21,8 +19,7 @@ article:nth-child(3) .art{background:#e1e6df}
   border-radius: 4px;
   background: #dce4d5;
 }
-#contact h2, #contact p { margin: 0; }
-#contact p + p { margin-top: 18px; }
+#contact h2 { margin: 0; }
 #contact a { overflow-wrap: anywhere; }
 @media (max-width: 700px) {
   #contact { grid-template-columns: minmax(0, 1fr); }
@@ -67,7 +64,7 @@ article:nth-child(3) .art{background:#e1e6df}
 #contact textarea { resize: vertical; }
 #contact button { justify-self: start; border: 0; font: inherit; cursor: pointer; }
 #contact :focus-visible { outline: 3px solid #944728; outline-offset: 3px; }
-.social { display: flex; gap: 20px; align-self: end; font-size: 14px; }
+.social { display: grid; justify-items: start; gap: 8px; align-self: end; min-width: 0; font-size: 14px; }
 @media (max-width: 800px) {
   .experience, .degrees { display: block; }
   .degrees > div + div { margin-top: 14px; }
