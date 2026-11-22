@@ -268,7 +268,7 @@ h2 {
 /* Study and work path */
 .path-scroll { overflow-x: auto; padding-bottom: 0.25rem; }
 .path-scroll:focus-visible { outline-offset: 4px; }
-.path-chart { min-width: 680px; }
+.path-chart { min-width: 840px; }
 
 .lane {
   display: grid;
@@ -305,7 +305,6 @@ h2 {
   background: var(--accent);
   box-shadow: inset 0 0 0 2px var(--bg);
   color: var(--panel);
-  white-space: nowrap;
 }
 .bar.study {
   background: color-mix(in srgb, var(--accent) 20%, var(--panel));
@@ -313,8 +312,8 @@ h2 {
 }
 .bar.narrow { padding: 0; }
 
-.bar b, .bar-label b { font-size: 0.82rem; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; }
-.bar small, .bar-label small { font-size: 0.68rem; overflow: hidden; text-overflow: ellipsis; }
+.bar b, .bar-label b { font-size: 0.82rem; line-height: 1.2; }
+.bar small, .bar-label small { font-size: 0.68rem; line-height: 1.2; }
 .bar small { opacity: 0.85; }
 
 .bar-label {
