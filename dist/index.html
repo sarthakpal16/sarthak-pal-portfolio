@@ -3,556 +3,306 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#11221b">
-  <title>Sarthak Pal · Software portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23142a21' stroke='%23e5b34c' stroke-width='3'/%3E%3Ctext x='32' y='41' text-anchor='middle' fill='%23f6f2e8' font-family='Georgia,serif' font-style='italic' font-size='30'%3Esp%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Sarthak Pal · Software engineer</title>
+  <meta name="description" content="Sarthak Pal: software engineer working on data systems and applied AI. MSc in Computer Science, Arizona State University.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4fd1'/%3E%3Ctext x='32' y='43' text-anchor='middle' fill='%23ffffff' font-family='Iowan Old Style,Palatino,Georgia,serif' font-weight='700' font-size='30'%3ESP%3C/text%3E%3C/svg%3E">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip" href="#work">Skip to projects</a>
+  <a class="skip" href="#top">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">
-        <span class="seal" aria-hidden="true">sp</span>
-        <span class="brand-name">Sarthak Pal</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#work">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-external" href="https://www.linkedin.com/in/sarthakpal16">LinkedIn <span aria-hidden="true">↗</span></a>
-      </nav>
+  <nav class="topbar" aria-label="Sections">
+    <a class="brand" href="#top" aria-label="Sarthak Pal, back to top">SP</a>
+    <div class="jump">
+      <a href="#path">Path</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-heading">
-      <!-- Sonoran canyon & ridge landscape backdrop inspired by Sarthak's portrait setting -->
-      <div class="hero-backdrop" aria-hidden="true">
-        <svg class="landscape-svg" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" role="presentation" focusable="false">
-          <defs>
-            <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#0d1e17"/>
-              <stop offset="44%" stop-color="#1a372c"/>
-              <stop offset="78%" stop-color="#483b2c"/>
-              <stop offset="100%" stop-color="#7c472c"/>
-            </linearGradient>
-            <radialGradient id="sun-glow" cx="78%" cy="30%" r="48%">
-              <stop offset="0%" stop-color="#f2ac60" stop-opacity="0.54"/>
-              <stop offset="42%" stop-color="#d4683d" stop-opacity="0.26"/>
-              <stop offset="100%" stop-color="#1a372c" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="mist-glow" cx="18%" cy="56%" r="50%">
-              <stop offset="0%" stop-color="#8ec4a8" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#0d1e17" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="mesa-far" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#9e4d2d"/>
-              <stop offset="100%" stop-color="#492a1e"/>
-            </linearGradient>
-            <linearGradient id="mesa-mid" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#693824"/>
-              <stop offset="100%" stop-color="#223228"/>
-            </linearGradient>
-            <linearGradient id="ridge-near" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#1a362b"/>
-              <stop offset="100%" stop-color="#0e1e17"/>
-            </linearGradient>
-          </defs>
-
-          <rect width="1440" height="720" fill="url(#sky-grad)"/>
-          <rect width="1440" height="720" fill="url(#sun-glow)"/>
-          <rect width="1440" height="720" fill="url(#mist-glow)"/>
-
-          <!-- Subtle atmospheric topographic contours -->
-          <g fill="none" stroke="#f5e6d0" stroke-opacity="0.06" stroke-width="1">
-            <path d="M-40 240 Q 260 175 560 228 T 1180 198 T 1500 230"/>
-            <path d="M-40 286 Q 310 218 640 274 T 1220 240 T 1500 268"/>
-            <path d="M-40 332 Q 360 265 720 315 T 1260 286 T 1500 310"/>
-          </g>
-
-          <!-- Warm desert sun disc -->
-          <circle cx="1102" cy="222" r="56" fill="#f0b66c" fill-opacity="0.16"/>
-          <circle cx="1102" cy="222" r="26" fill="#f7cfa0" fill-opacity="0.28"/>
-
-          <!-- Far red-rock canyon silhouette -->
-          <path d="M0 448 L120 402 L224 416 L342 356 L470 364 L575 418 L734 388 L858 342 L980 348 L1084 394 L1238 352 L1346 376 L1440 344 L1440 720 L0 720 Z" fill="url(#mesa-far)" opacity="0.88"/>
-
-          <!-- Mid canyon terraces -->
-          <path d="M0 510 L146 474 L286 492 L438 432 L610 472 L768 440 L942 486 L1120 426 L1288 456 L1440 422 L1440 720 L0 720 Z" fill="url(#mesa-mid)" opacity="0.94"/>
-
-          <!-- Near desert scrub & evergreen ridge -->
-          <path d="M0 578 Q 180 538 360 572 T 760 558 T 1160 536 T 1440 564 L1440 720 L0 720 Z" fill="url(#ridge-near)"/>
-          <path d="M0 644 Q 320 604 680 638 T 1440 618 L1440 720 L0 720 Z" fill="#0d1b15"/>
-        </svg>
+  <main id="top" class="page" tabindex="-1">
+    <header class="intro">
+      <img class="portrait" src="portrait.jpg" width="594" height="455" alt="Sarthak Pal">
+      <div class="intro-copy">
+        <h1>Sarthak Pal</h1>
+        <p class="tagline">Software engineer. I work on data systems and applied AI.</p>
+        <p class="meta">
+          <span>MSc Computer Science, Arizona State University&nbsp;’26</span>
+          <span>BTech, IIIT Delhi ’22</span>
+        </p>
+        <nav class="links" aria-label="Profiles">
+          <a href="https://github.com/sarthakpal16" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M10 2.2a7.8 7.8 0 0 0-2.46 15.2c.39.07.53-.17.53-.38v-1.44c-2.16.47-2.62-.92-2.62-.92-.35-.9-.86-1.14-.86-1.14-.71-.48.05-.47.05-.47.78.05 1.2.8 1.2.8.7 1.2 1.83.85 2.28.65.07-.5.27-.85.5-1.04-1.73-.2-3.55-.86-3.55-3.85 0-.85.3-1.55.8-2.1-.08-.2-.35-.99.08-2.06 0 0 .66-.21 2.15.8a7.4 7.4 0 0 1 3.92 0c1.49-1.01 2.15-.8 2.15-.8.43 1.07.16 1.86.08 2.06.5.55.8 1.25.8 2.1 0 3-1.82 3.65-3.56 3.85.28.24.53.72.53 1.45v2.15c0 .21.14.46.54.38A7.8 7.8 0 0 0 10 2.2Z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/sarthakpal16" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="17" height="17" rx="2.5" fill="currentColor"/><path fill="var(--bg)" d="M4.6 7.3h2.6v8.4H4.6V7.3Zm1.3-4.1c.9 0 1.5.6 1.5 1.4 0 .8-.6 1.4-1.5 1.4-.9 0-1.5-.6-1.5-1.4 0-.8.6-1.4 1.5-1.4ZM8.9 7.3h2.5v1.2h.04c.35-.66 1.2-1.36 2.47-1.36 2.64 0 3.13 1.74 3.13 4v4.56h-2.6v-4.04c0-.96-.02-2.2-1.34-2.2-1.34 0-1.55 1.05-1.55 2.13v4.11H8.9V7.3Z"/></svg>
+            LinkedIn
+          </a>
+          <a href="#contact">
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2.5 4.5h15a1 1 0 0 1 1 1v.4L10 11 1.5 5.9v-.4a1 1 0 0 1 1-1Zm-1 3.2 8.5 5.1 8.5-5.1v6.8a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1V7.7Z"/></svg>
+            Contact
+          </a>
+        </nav>
       </div>
+    </header>
 
-      <div class="container hero-stage">
-        <div class="hero-glass">
-          <div class="hero-portrait-col">
-            <figure class="portrait-medallion">
-              <div class="portrait-ring">
-                <img src="portrait.jpg" width="594" height="455" alt="Sarthak Pal">
-              </div>
-            </figure>
-          </div>
+    <ul class="glance" aria-label="At a glance">
+      <li>
+        <span class="g-value">3</span>
+        <span class="g-label">industry roles</span>
+        <span class="g-detail">Citi, Beganto Software Systems and Paytm</span>
+      </li>
+      <li>
+        <span class="g-value">2</span>
+        <span class="g-label">computer science degrees</span>
+        <span class="g-detail">BTech at IIIT Delhi, MSc at Arizona State University</span>
+      </li>
+      <li>
+        <span class="g-value">3</span>
+        <span class="g-label">featured projects</span>
+        <span class="g-detail">AI trip planning, streaming graph analytics, queue-based cloud inference</span>
+      </li>
+    </ul>
 
-          <div class="hero-copy">
-            <p class="hero-role">
-              <span class="role-dot" aria-hidden="true"></span>
-              Software Engineer · Data Systems &amp; Applied AI
-            </p>
-            <h1 id="hero-heading">Sarthak <em>Pal.</em></h1>
-            <p class="lead">I’m a software engineer working on data systems and applied AI. I earned my master’s in computer science at Arizona State University.</p>
-
-            <div class="hero-actions" role="group" aria-label="Primary actions">
-              <a class="button button-light" href="#work">
-                <span>View work</span>
-                <span class="button-arrow" aria-hidden="true">↓</span>
-              </a>
-              <a class="button button-glass" href="#contact">
-                <span>Contact</span>
-                <span class="button-arrow button-arrow-right" aria-hidden="true">→</span>
-              </a>
+    <section id="path" aria-labelledby="path-heading">
+      <h2 id="path-heading">Eight years at a glance</h2>
+      <div class="path-scroll" role="region" aria-label="Study and work timeline, scrolls sideways on small screens" tabindex="0">
+        <div class="path-chart" role="img" aria-label="Timeline from 2018 to 2026. Study: BTech in Computer Science at IIIT Delhi, 2018 to 2022; MSc in Computer Science at Arizona State University, 2024 to 2026. Work: data science intern at Paytm, August to November 2022; software developer at Beganto Software Systems, December 2022 to December 2023; software engineering at Citi, December 2025 to May 2026.">
+          <div class="lane">
+            <span class="lane-name">Study</span>
+            <div class="plot">
+              <span class="bar study" style="left: 5.556%; width: 44.444%;" title="BTech, Computer Science · IIIT Delhi · 2018 – 2022">
+                <b>BTech, Computer Science</b>
+                <small>IIIT Delhi · 2018 – 2022</small>
+              </span>
+              <span class="bar study" style="left: 72.222%; width: 22.222%;" title="MSc, Computer Science · Arizona State University · 2024 – 2026">
+                <b>MSc, Computer Science</b>
+                <small>Arizona State · 2024 – 2026</small>
+              </span>
             </div>
-
-            <div class="hero-social-bar" role="group" aria-label="Social profiles">
-              <span class="hero-social-label">Profiles</span>
-              <div class="hero-social-links">
-                <a class="social-pill" href="https://www.linkedin.com/in/sarthakpal16">
-                  <svg class="icon-sm" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                    <path fill="currentColor" d="M4.6 7.3h2.6v8.4H4.6V7.3Zm1.3-4.1c.9 0 1.5.6 1.5 1.4 0 .8-.6 1.4-1.5 1.4-.9 0-1.5-.6-1.5-1.4 0-.8.6-1.4 1.5-1.4ZM8.9 7.3h2.5v1.2h.04c.35-.66 1.2-1.36 2.47-1.36 2.64 0 3.13 1.74 3.13 4v4.56h-2.6v-4.04c0-.96-.02-2.2-1.34-2.2-1.34 0-1.55 1.05-1.55 2.13v4.11H8.9V7.3Z"/>
-                  </svg>
-                  <span>LinkedIn</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-                <a class="social-pill" href="https://github.com/sarthakpal16">
-                  <svg class="icon-sm" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M10 2.2a7.8 7.8 0 0 0-2.46 15.2c.39.07.53-.17.53-.38v-1.44c-2.16.47-2.62-.92-2.62-.92-.35-.9-.86-1.14-.86-1.14-.71-.48.05-.47.05-.47.78.05 1.2.8 1.2.8.7 1.2 1.83.85 2.28.65.07-.5.27-.85.5-1.04-1.73-.2-3.55-.86-3.55-3.85 0-.85.3-1.55.8-2.1-.08-.2-.35-.99.08-2.06 0 0 .66-.21 2.15.8a7.4 7.4 0 0 1 3.92 0c1.49-1.01 2.15-.8 2.15-.8.43 1.07.16 1.86.08 2.06.5.55.8 1.25.8 2.1 0 3-1.82 3.65-3.56 3.85.28.24.53.72.53 1.45v2.15c0 .21.14.46.54.38A7.8 7.8 0 0 0 10 2.2Z"/>
-                  </svg>
-                  <span>GitHub</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-              </div>
+          </div>
+          <div class="lane">
+            <span class="lane-name">Work</span>
+            <div class="plot">
+              <span class="bar narrow" style="left: 50.926%; width: 3.704%;" title="Data science intern · Paytm · Aug – Nov 2022"></span>
+              <span class="bar-label" style="right: calc(49.074% + 0.45rem);">
+                <b>Paytm</b>
+                <small>Aug – Nov 2022</small>
+              </span>
+              <span class="bar" style="left: 54.630%; width: 12.037%;" title="Software developer · Beganto Software Systems · Dec 2022 – Dec 2023">
+                <b>Beganto</b>
+                <small>Dec&nbsp;’22 – Dec&nbsp;’23</small>
+              </span>
+              <span class="bar narrow" style="left: 87.963%; width: 5.556%;" title="Software engineering · Citi · Dec 2025 – May 2026"></span>
+              <span class="bar-label" style="right: calc(12.037% + 0.45rem);">
+                <b>Citi</b>
+                <small>Dec 2025 – May 2026</small>
+              </span>
+            </div>
+          </div>
+          <div class="lane axis" aria-hidden="true">
+            <span class="lane-name"></span>
+            <div class="plot">
+              <span class="tick" style="left: 0%;">2018</span>
+              <span class="tick" style="left: 11.111%;">2019</span>
+              <span class="tick" style="left: 22.222%;">2020</span>
+              <span class="tick" style="left: 33.333%;">2021</span>
+              <span class="tick" style="left: 44.444%;">2022</span>
+              <span class="tick" style="left: 55.556%;">2023</span>
+              <span class="tick" style="left: 66.667%;">2024</span>
+              <span class="tick" style="left: 77.778%;">2025</span>
+              <span class="tick" style="left: 88.889%;">2026</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="work" class="section" aria-labelledby="work-heading">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-index" aria-hidden="true">01</p>
-          <div class="section-title-wrap">
-            <p class="section-kicker">Featured engineering</p>
-            <h2 id="work-heading">Selected work</h2>
-          </div>
-        </div>
-
-        <div class="cards">
-          <article class="project-card">
-            <div class="art art-planner" aria-hidden="true">
-              <svg viewBox="0 0 360 220" role="presentation" focusable="false">
-                <defs>
-                  <pattern id="grid-planner" width="18" height="18" patternUnits="userSpaceOnUse">
-                    <circle cx="1.5" cy="1.5" r="0.9" fill="#8bb9a2" opacity="0.22"/>
-                  </pattern>
-                  <radialGradient id="glow-planner" cx="32%" cy="46%" r="55%">
-                    <stop offset="0%" stop-color="#e0754b" stop-opacity="0.22"/>
-                    <stop offset="100%" stop-color="#13251e" stop-opacity="0"/>
-                  </radialGradient>
-                </defs>
-                <rect width="360" height="220" fill="#13251e"/>
-                <rect width="360" height="220" fill="url(#grid-planner)"/>
-                <rect width="360" height="220" fill="url(#glow-planner)"/>
-
-                <rect x="18" y="16" width="98" height="20" rx="10" fill="#1d382d" stroke="#365c4b" stroke-width="1"/>
-                <circle cx="29" cy="26" r="3" fill="#e0754b"/>
-                <text x="38" y="29.5" fill="#d8e7de" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8.5" letter-spacing="0.08em">LANGGRAPH</text>
-
-                <path d="M 176 74 C 176 34, 62 34, 62 74" fill="none" stroke="#e0754b" stroke-width="1.6" stroke-dasharray="4 4"/>
-                <polygon points="58,70 62,79 66,70" fill="#e0754b"/>
-                <rect x="86" y="34" width="66" height="16" rx="8" fill="#2b211c" stroke="#e0754b" stroke-opacity="0.65" stroke-width="1"/>
-                <text x="119" y="45" text-anchor="middle" fill="#f3b297" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7.5" letter-spacing="0.06em">REBALANCE</text>
-
-                <path d="M 96 98 H 134" fill="none" stroke="#8ec4a8" stroke-width="1.7"/>
-                <polygon points="131,94 139,98 131,102" fill="#8ec4a8"/>
-                <path d="M 212 98 H 246" fill="none" stroke="#8ec4a8" stroke-width="1.7"/>
-                <polygon points="243,94 251,98 243,102" fill="#8ec4a8"/>
-
-                <rect x="24" y="76" width="72" height="44" rx="8" fill="#1a342a" stroke="#5b8d75" stroke-width="1.3"/>
-                <circle cx="37" cy="91" r="3.5" fill="#e5b34c"/>
-                <text x="46" y="94" fill="#f4efe4" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8.5" font-weight="500">PLAN</text>
-                <rect x="34" y="103" width="44" height="4" rx="2" fill="#6b9e84" opacity="0.55"/>
-                <rect x="34" y="110" width="28" height="3.5" rx="1.75" fill="#6b9e84" opacity="0.35"/>
-
-                <rect x="140" y="76" width="72" height="44" rx="8" fill="#252c24" stroke="#e0754b" stroke-width="1.4"/>
-                <circle cx="153" cy="91" r="3.5" fill="#e0754b"/>
-                <text x="162" y="94" fill="#f4efe4" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8.5" font-weight="500">BUDGET</text>
-                <rect x="150" y="103" width="50" height="4" rx="2" fill="#e0754b" opacity="0.45"/>
-                <rect x="150" y="110" width="34" height="3.5" rx="1.75" fill="#e5b34c" opacity="0.55"/>
-
-                <rect x="252" y="54" width="88" height="90" rx="9" fill="#183026" stroke="#8ec4a8" stroke-width="1.3"/>
-                <text x="263" y="70" fill="#a8d5bc" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" letter-spacing="0.08em">ITINERARY</text>
-                <rect x="262" y="78" width="68" height="16" rx="4" fill="#214033"/>
-                <circle cx="271" cy="86" r="3" fill="#8ec4a8"/>
-                <rect x="279" y="84" width="38" height="4" rx="2" fill="#dfece5" opacity="0.8"/>
-                <rect x="262" y="99" width="68" height="16" rx="4" fill="#214033"/>
-                <circle cx="271" cy="107" r="3" fill="#e5b34c"/>
-                <rect x="279" y="105" width="44" height="4" rx="2" fill="#dfece5" opacity="0.8"/>
-                <rect x="262" y="120" width="68" height="16" rx="4" fill="#214033"/>
-                <circle cx="271" cy="128" r="3" fill="#e0754b"/>
-                <rect x="279" y="126" width="32" height="4" rx="2" fill="#dfece5" opacity="0.8"/>
-
-                <rect x="24" y="160" width="316" height="40" rx="8" fill="#172d24" stroke="#2d4c3e" stroke-width="1"/>
-                <text x="36" y="176" fill="#9fc5b1" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" letter-spacing="0.06em">TRIP COST vs CAP</text>
-                <text x="328" y="176" text-anchor="end" fill="#8ec4a8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">IN BUDGET</text>
-                <rect x="36" y="184" width="292" height="7" rx="3.5" fill="#0f1e18"/>
-                <rect x="36" y="184" width="214" height="7" rx="3.5" fill="#8ec4a8"/>
-                <rect x="192" y="184" width="58" height="7" rx="3.5" fill="#e5b34c"/>
-                <line x1="274" y1="180" x2="274" y2="195" stroke="#e0754b" stroke-width="1.8"/>
-              </svg>
-            </div>
-            <div class="card-body">
-              <p class="card-purpose">Budget-aware itinerary planning</p>
-              <h3>AI travel planner</h3>
-              <p class="card-desc">Plans activities for a trip and adjusts the itinerary to fit the traveler’s budget.</p>
-              <div class="card-stack">
-                <span class="stack-label">Stack</span>
-                <div class="chip-list">
-                  <span class="chip">Python</span>
-                  <span class="chip">LangGraph</span>
-                </div>
-              </div>
-            </div>
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <ol class="timeline">
+        <li class="t-item">
+          <span class="t-logo" aria-hidden="true">C</span>
+          <article class="t-card">
+            <p class="t-when">Dec 2025 – May 2026</p>
+            <h3>Software engineering</h3>
+            <p class="org">Citi</p>
           </article>
-
-          <article class="project-card">
-            <div class="art art-graph" aria-hidden="true">
-              <svg viewBox="0 0 360 220" role="presentation" focusable="false">
-                <defs>
-                  <pattern id="grid-graph" width="18" height="18" patternUnits="userSpaceOnUse">
-                    <path d="M 18 0 L 0 0 0 18" fill="none" stroke="#8bb9a2" stroke-width="0.6" opacity="0.12"/>
-                  </pattern>
-                  <radialGradient id="glow-graph" cx="68%" cy="48%" r="48%">
-                    <stop offset="0%" stop-color="#e5b34c" stop-opacity="0.22"/>
-                    <stop offset="100%" stop-color="#13251e" stop-opacity="0"/>
-                  </radialGradient>
-                </defs>
-                <rect width="360" height="220" fill="#13251e"/>
-                <rect width="360" height="220" fill="url(#grid-graph)"/>
-                <rect width="360" height="220" fill="url(#glow-graph)"/>
-
-                <rect x="18" y="18" width="96" height="20" rx="10" fill="#1d382d" stroke="#365c4b" stroke-width="1"/>
-                <circle cx="29" cy="28" r="3" fill="#e5b34c"/>
-                <text x="38" y="31.5" fill="#d8e7de" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8.5" letter-spacing="0.08em">TRIP STREAM</text>
-
-                <g stroke-linecap="round">
-                  <line x1="20" y1="68" x2="108" y2="68" stroke="#2c4e40" stroke-width="2"/>
-                  <line x1="26" y1="68" x2="48" y2="68" stroke="#e5b34c" stroke-width="3"/>
-                  <line x1="62" y1="68" x2="88" y2="68" stroke="#8ec4a8" stroke-width="3"/>
-
-                  <line x1="20" y1="98" x2="108" y2="98" stroke="#2c4e40" stroke-width="2"/>
-                  <line x1="34" y1="98" x2="66" y2="98" stroke="#e0754b" stroke-width="3"/>
-                  <line x1="78" y1="98" x2="96" y2="98" stroke="#e5b34c" stroke-width="3"/>
-
-                  <line x1="20" y1="128" x2="108" y2="128" stroke="#2c4e40" stroke-width="2"/>
-                  <line x1="22" y1="128" x2="42" y2="128" stroke="#8ec4a8" stroke-width="3"/>
-                  <line x1="56" y1="128" x2="84" y2="128" stroke="#8ec4a8" stroke-width="3"/>
-                </g>
-
-                <line x1="112" y1="68" x2="146" y2="102" stroke="#5b8d75" stroke-width="1.2" stroke-dasharray="3 3"/>
-                <line x1="112" y1="98" x2="146" y2="102" stroke="#e5b34c" stroke-width="1.5"/>
-                <line x1="112" y1="128" x2="146" y2="102" stroke="#5b8d75" stroke-width="1.2" stroke-dasharray="3 3"/>
-
-                <g stroke="#3d6654" stroke-width="1.3">
-                  <line x1="154" y1="102" x2="196" y2="148"/>
-                  <line x1="204" y1="54" x2="264" y2="48"/>
-                  <line x1="264" y1="48" x2="318" y2="78"/>
-                  <line x1="196" y1="148" x2="256" y2="154"/>
-                  <line x1="256" y1="154" x2="318" y2="78"/>
-                  <line x1="252" y1="98" x2="264" y2="48"/>
-                  <line x1="252" y1="98" x2="196" y2="148"/>
-                  <line x1="252" y1="98" x2="256" y2="154"/>
-                </g>
-
-                <polyline points="154,102 204,54 252,98 318,78" fill="none" stroke="#e0754b" stroke-width="2.6" stroke-linejoin="round"/>
-
-                <circle cx="252" cy="98" r="28" fill="none" stroke="#e5b34c" stroke-opacity="0.32" stroke-width="1.2" stroke-dasharray="4 3"/>
-                <circle cx="252" cy="98" r="19" fill="#e5b34c" fill-opacity="0.14" stroke="#e5b34c" stroke-opacity="0.7" stroke-width="1.2"/>
-                <circle cx="204" cy="54" r="17" fill="none" stroke="#8ec4a8" stroke-opacity="0.38" stroke-width="1.1" stroke-dasharray="3 3"/>
-
-                <circle cx="264" cy="48" r="5.5" fill="#1e3c30" stroke="#7fb398" stroke-width="1.5"/>
-                <circle cx="196" cy="148" r="6" fill="#1e3c30" stroke="#7fb398" stroke-width="1.5"/>
-                <circle cx="256" cy="154" r="5.5" fill="#1e3c30" stroke="#7fb398" stroke-width="1.5"/>
-
-                <circle cx="154" cy="102" r="8" fill="#173026" stroke="#e0754b" stroke-width="2.2"/>
-                <circle cx="204" cy="54" r="8.5" fill="#173026" stroke="#e0754b" stroke-width="2.2"/>
-                <circle cx="252" cy="98" r="11" fill="#e0754b" stroke="#f6f2e8" stroke-width="2"/>
-                <circle cx="318" cy="78" r="8" fill="#8ec4a8" stroke="#f6f2e8" stroke-width="1.8"/>
-
-                <text x="154" y="105" text-anchor="middle" fill="#f6f2e8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" font-weight="500">0</text>
-                <text x="204" y="57" text-anchor="middle" fill="#f6f2e8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" font-weight="500">1</text>
-                <text x="252" y="101" text-anchor="middle" fill="#13251e" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8.5" font-weight="700">2</text>
-                <text x="318" y="81" text-anchor="middle" fill="#13251e" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" font-weight="700">3</text>
-
-                <rect x="18" y="176" width="324" height="26" rx="7" fill="#172d24" stroke="#2d4c3e" stroke-width="1"/>
-                <circle cx="34" cy="189" r="3.5" fill="#e5b34c"/>
-                <text x="43" y="192" fill="#c7ddd1" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">KAFKA INGEST</text>
-                <circle cx="144" cy="189" r="3.5" fill="#e0754b"/>
-                <text x="153" y="192" fill="#c7ddd1" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">PAGERANK HUB</text>
-                <line x1="252" y1="189" x2="266" y2="189" stroke="#8ec4a8" stroke-width="2.4"/>
-                <text x="273" y="192" fill="#c7ddd1" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">BFS PATH</text>
-              </svg>
-            </div>
-            <div class="card-body">
-              <p class="card-purpose">Streaming graph ranking &amp; traversal</p>
-              <h3>Real-time graph analytics</h3>
-              <p class="card-desc">Streams New York City taxi trips into a graph. PageRank ranks connected locations, and breadth-first search traces paths between them.</p>
-              <div class="card-stack">
-                <span class="stack-label">Stack</span>
-                <div class="chip-list">
-                  <span class="chip">Kafka</span>
-                  <span class="chip">Neo4j</span>
-                </div>
-              </div>
-            </div>
+        </li>
+        <li class="t-item">
+          <span class="t-logo" aria-hidden="true">B</span>
+          <article class="t-card">
+            <p class="t-when">Dec 2022 – Dec 2023</p>
+            <h3>Software developer</h3>
+            <p class="org">Beganto Software Systems</p>
+            <p class="t-what">Built tools that generated personalized employee training content.</p>
           </article>
-
-          <article class="project-card">
-            <div class="art art-cloud" aria-hidden="true">
-              <svg viewBox="0 0 360 220" role="presentation" focusable="false">
-                <defs>
-                  <pattern id="grid-cloud" width="18" height="18" patternUnits="userSpaceOnUse">
-                    <circle cx="1.5" cy="1.5" r="0.9" fill="#8bb9a2" opacity="0.22"/>
-                  </pattern>
-                  <radialGradient id="glow-cloud" cx="76%" cy="50%" r="48%">
-                    <stop offset="0%" stop-color="#8ec4a8" stop-opacity="0.22"/>
-                    <stop offset="100%" stop-color="#13251e" stop-opacity="0"/>
-                  </radialGradient>
-                </defs>
-                <rect width="360" height="220" fill="#13251e"/>
-                <rect width="360" height="220" fill="url(#grid-cloud)"/>
-                <rect width="360" height="220" fill="url(#glow-cloud)"/>
-
-                <text x="52" y="30" text-anchor="middle" fill="#8cb49f" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" letter-spacing="0.08em">WEB TIER</text>
-                <text x="166" y="30" text-anchor="middle" fill="#e5b34c" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" letter-spacing="0.08em">SQS BUFFER</text>
-                <text x="292" y="30" text-anchor="middle" fill="#8ec4a8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" letter-spacing="0.08em">EC2 WORKERS</text>
-
-                <line x1="100" y1="42" x2="100" y2="178" stroke="#2c4e40" stroke-width="1" stroke-dasharray="3 4"/>
-                <line x1="230" y1="42" x2="230" y2="178" stroke="#2c4e40" stroke-width="1" stroke-dasharray="3 4"/>
-
-                <rect x="20" y="74" width="64" height="68" rx="9" fill="#19342a" stroke="#6aa085" stroke-width="1.4"/>
-                <circle cx="33" cy="88" r="3" fill="#8ec4a8"/>
-                <rect x="41" y="85.5" width="30" height="4.5" rx="2.25" fill="#d9e8e0" opacity="0.85"/>
-                <rect x="30" y="102" width="44" height="8" rx="3" fill="#234739"/>
-                <rect x="30" y="116" width="44" height="8" rx="3" fill="#234739"/>
-                <rect x="34" y="104.5" width="22" height="3" rx="1.5" fill="#e5b34c"/>
-                <rect x="34" y="118.5" width="30" height="3" rx="1.5" fill="#e0754b"/>
-
-                <line x1="84" y1="108" x2="112" y2="108" stroke="#e5b34c" stroke-width="1.8"/>
-                <polygon points="109,104 117,108 109,112" fill="#e5b34c"/>
-
-                <rect x="118" y="70" width="96" height="76" rx="10" fill="#1d2f27" stroke="#e5b34c" stroke-width="1.4"/>
-                <text x="166" y="85" text-anchor="middle" fill="#f0d592" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="7.5" letter-spacing="0.06em">QUEUE DEPTH</text>
-                <rect x="128" y="94" width="14" height="40" rx="4" fill="#e0754b"/>
-                <rect x="148" y="94" width="14" height="40" rx="4" fill="#e5b34c"/>
-                <rect x="168" y="94" width="14" height="40" rx="4" fill="#e5b34c" opacity="0.78"/>
-                <rect x="188" y="94" width="14" height="40" rx="4" fill="#8ec4a8" opacity="0.75"/>
-
-                <path d="M 214 108 H 236 M 236 62 H 248 M 236 108 H 248 M 236 154 H 248 M 236 62 V 154" fill="none" stroke="#8ec4a8" stroke-width="1.6"/>
-                <polygon points="245,58 252,62 245,66" fill="#8ec4a8"/>
-                <polygon points="245,104 252,108 245,112" fill="#8ec4a8"/>
-                <polygon points="245,150 252,154 245,158" fill="#e5b34c"/>
-
-                <rect x="252" y="45" width="88" height="34" rx="7" fill="#1b372c" stroke="#8ec4a8" stroke-width="1.3"/>
-                <circle cx="265" cy="62" r="4" fill="#8ec4a8"/>
-                <text x="275" y="59" fill="#f4efe4" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">EC2-01</text>
-                <rect x="275" y="65" width="52" height="4" rx="2" fill="#2c5545"/>
-                <rect x="275" y="65" width="40" height="4" rx="2" fill="#8ec4a8"/>
-
-                <rect x="252" y="91" width="88" height="34" rx="7" fill="#1b372c" stroke="#8ec4a8" stroke-width="1.3"/>
-                <circle cx="265" cy="108" r="4" fill="#8ec4a8"/>
-                <text x="275" y="105" fill="#f4efe4" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">EC2-02</text>
-                <rect x="275" y="111" width="52" height="4" rx="2" fill="#2c5545"/>
-                <rect x="275" y="111" width="30" height="4" rx="2" fill="#e0754b"/>
-
-                <rect x="252" y="137" width="88" height="34" rx="7" fill="#172d24" stroke="#e5b34c" stroke-width="1.3" stroke-dasharray="4 3"/>
-                <circle cx="265" cy="154" r="4" fill="#e5b34c"/>
-                <text x="275" y="151" fill="#f0d592" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8">EC2-03 +</text>
-                <rect x="275" y="157" width="52" height="4" rx="2" fill="#2c4a3d"/>
-                <rect x="275" y="157" width="18" height="4" rx="2" fill="#e5b34c"/>
-
-                <rect x="20" y="184" width="320" height="22" rx="6" fill="#172d24" stroke="#2d4c3e" stroke-width="1"/>
-                <text x="180" y="198" text-anchor="middle" fill="#a7cbb8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="8" letter-spacing="0.06em">DECOUPLED ASYNC INFERENCE PIPELINE</text>
-              </svg>
-            </div>
-            <div class="card-body">
-              <p class="card-purpose">Decoupled queue-buffered inference</p>
-              <h3>Elastic recognition service</h3>
-              <p class="card-desc">Buffers recognition requests in an SQS queue so EC2 inference workers can process them independently of the web tier.</p>
-              <div class="card-stack">
-                <span class="stack-label">Stack</span>
-                <div class="chip-list">
-                  <span class="chip">AWS EC2</span>
-                  <span class="chip">SQS</span>
-                </div>
-              </div>
-            </div>
+        </li>
+        <li class="t-item">
+          <span class="t-logo" aria-hidden="true">P</span>
+          <article class="t-card">
+            <p class="t-when">Aug – Nov 2022</p>
+            <h3>Data science intern</h3>
+            <p class="org">Paytm</p>
+            <p class="t-what">Analyzed transactions with Python, PySpark and SQL.</p>
+            <p class="t-tags"><span>Python</span><span>PySpark</span><span>SQL</span></p>
           </article>
-        </div>
-      </div>
+        </li>
+      </ol>
     </section>
 
-    <section id="experience" class="section" aria-labelledby="experience-heading">
-      <div class="container split-section">
-        <div class="section-head section-head-sticky">
-          <p class="section-index" aria-hidden="true">02</p>
-          <div class="section-title-wrap">
-            <p class="section-kicker">Career history</p>
-            <h2 id="experience-heading">Experience</h2>
-          </div>
-        </div>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
 
-        <ol class="timeline">
-          <li class="timeline-item timeline-item-current">
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <h3>Software engineering</h3>
-                <small class="date-pill">Dec 2025 – May 2026</small>
-              </div>
-              <p class="org">Citi</p>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <h3>Software developer</h3>
-                <small class="date-pill">Dec 2022 – Dec 2023</small>
-              </div>
-              <p class="org">Beganto Software Systems</p>
-              <p class="role-summary">Built tools that generated personalized employee training content.</p>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <h3>Data science intern</h3>
-                <small class="date-pill">Aug – Nov 2022</small>
-              </div>
-              <p class="org">Paytm</p>
-              <p class="role-summary">Analyzed transactions with Python, PySpark and SQL.</p>
-            </div>
-          </li>
+      <article class="project" aria-labelledby="p-planner">
+        <p class="p-kind">Applied AI</p>
+        <h3 id="p-planner">AI travel planner</h3>
+        <p class="p-what">Plans activities for a trip and adjusts the itinerary to fit the traveler’s budget.</p>
+        <ol class="flow" aria-label="How it works">
+          <li>Trip details</li>
+          <li>Planned activities</li>
+          <li>Budget check</li>
+          <li>Adjusted itinerary</li>
         </ol>
+        <p class="stack"><span>Python</span><span>LangGraph</span></p>
+      </article>
+
+      <article class="project" aria-labelledby="p-graph">
+        <p class="p-kind">Streaming data</p>
+        <h3 id="p-graph">Real-time graph analytics</h3>
+        <p class="p-what">Streams New York City taxi trips into a graph. PageRank ranks connected locations, and breadth-first search traces paths between them.</p>
+        <ol class="flow" aria-label="How it works">
+          <li>NYC taxi trips</li>
+          <li>Kafka stream</li>
+          <li>Neo4j graph</li>
+          <li>PageRank + BFS</li>
+        </ol>
+        <p class="stack"><span>Kafka</span><span>Neo4j</span></p>
+      </article>
+
+      <article class="project" aria-labelledby="p-cloud">
+        <p class="p-kind">Cloud systems</p>
+        <h3 id="p-cloud">Elastic recognition service</h3>
+        <p class="p-what">Buffers recognition requests in an SQS queue so EC2 inference workers can process them independently of the web tier.</p>
+        <ol class="flow" aria-label="How it works">
+          <li>Web tier</li>
+          <li>SQS request queue</li>
+          <li>EC2 inference workers</li>
+        </ol>
+        <p class="stack"><span>AWS EC2</span><span>SQS</span></p>
+      </article>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd><span class="chip">Python</span><span class="chip">SQL</span></dd>
+        <dt>Data</dt>
+        <dd><span class="chip">PySpark</span><span class="chip">Kafka</span><span class="chip">Neo4j</span></dd>
+        <dt>Applied AI</dt>
+        <dd><span class="chip">LangGraph</span></dd>
+        <dt>Cloud</dt>
+        <dd><span class="chip">AWS EC2</span><span class="chip">SQS</span></dd>
+      </dl>
+    </section>
+
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="edu">
+        <span class="edu-name">
+          <span class="edu-mark" aria-hidden="true">ASU</span>
+          <span>MSc, Computer Science <span class="org">· Arizona State University</span></span>
+        </span>
+        <span class="when">2024 – 2026</span>
+      </div>
+      <div class="edu">
+        <span class="edu-name">
+          <span class="edu-mark" aria-hidden="true">IIIT</span>
+          <span>BTech, Computer Science <span class="org">· IIIT Delhi</span></span>
+        </span>
+        <span class="when">2018 – 2022</span>
       </div>
     </section>
 
-    <section id="education" class="section" aria-labelledby="education-heading">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-index" aria-hidden="true">03</p>
-          <div class="section-title-wrap">
-            <p class="section-kicker">Academic background</p>
-            <h2 id="education-heading">Education</h2>
-          </div>
-        </div>
+    <section id="contact" class="contact" aria-labelledby="contact-heading" tabindex="-1">
+      <h2 id="contact-heading">Contact</h2>
+      <div class="contact-card">
+        <p class="cta">Want to talk about data systems or applied AI?</p>
+        <p class="contact-note">Send a message here, or reach me through either profile.</p>
 
-        <div class="degrees">
-          <article class="degree-card degree-primary">
-            <div class="degree-top">
-              <span class="degree-tag">Graduate</span>
-              <small class="degree-dates">2024–2026</small>
-            </div>
-            <h3>Arizona State University</h3>
-            <p class="degree-title">MSc in Computer Science</p>
-          </article>
-
-          <article class="degree-card degree-secondary">
-            <div class="degree-top">
-              <span class="degree-tag">Undergraduate</span>
-              <small class="degree-dates">2018–2022</small>
-            </div>
-            <h3>IIIT Delhi</h3>
-            <p class="degree-title">BTech in Computer Science</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-contact" aria-labelledby="contact-heading" tabindex="-1">
-      <div class="container">
-        <div class="contact-shell">
-          <div class="contact-info">
-            <div class="section-head section-head-compact">
-              <p class="section-index" aria-hidden="true">04</p>
-              <div class="section-title-wrap">
-                <p class="section-kicker">Direct inquiry</p>
-                <h2 id="contact-heading">Get in touch</h2>
-              </div>
-            </div>
-            <p class="contact-note">Send a message with the form, or connect through the profile links below.</p>
-
-            <div class="social" role="group" aria-label="Profile links">
-              <a class="social-card" href="https://www.linkedin.com/in/sarthakpal16">
-                <span class="social-label">LinkedIn <span aria-hidden="true">↗</span></span>
-                <span class="social-url">https://www.linkedin.com/in/sarthakpal16</span>
-              </a>
-              <a class="social-card" href="https://github.com/sarthakpal16">
-                <span class="social-label">GitHub <span aria-hidden="true">↗</span></span>
-                <span class="social-url">https://github.com/sarthakpal16</span>
-              </a>
-            </div>
-          </div>
-
-          <form class="contact-form" method="post" action="https://formsubmit.co/5375573fc088dc7817876f744c7a0642">
-            <div class="form-row">
-              <label class="field">
-                <span>Name</span>
-                <input name="name" autocomplete="name" required>
-              </label>
-              <label class="field">
-                <span>Reply email</span>
-                <input name="email" type="email" autocomplete="email" required>
-              </label>
-            </div>
+        <form class="contact-form" method="post" action="https://formsubmit.co/5375573fc088dc7817876f744c7a0642">
+          <div class="form-row">
             <label class="field">
-              <span>Message</span>
-              <textarea name="message" rows="5" required></textarea>
+              <span>Name</span>
+              <input name="name" autocomplete="name" required>
             </label>
-            <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off">
-            <div class="form-footer">
-              <button class="button button-primary" type="submit">
-                <span>Send message</span>
-                <span class="button-arrow button-arrow-right" aria-hidden="true">→</span>
-              </button>
-            </div>
-          </form>
-        </div>
+            <label class="field">
+              <span>Reply email</span>
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+          </div>
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off">
+          <button class="send" type="submit">Send message</button>
+        </form>
+
+        <ul class="profile-urls" aria-label="Profile links">
+          <li>
+            <span class="profile-name">GitHub</span>
+            <a href="https://github.com/sarthakpal16" target="_blank" rel="noopener noreferrer">https://github.com/sarthakpal16</a>
+          </li>
+          <li>
+            <span class="profile-name">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/sarthakpal16" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/sarthakpal16</a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="seal seal-sm" aria-hidden="true">sp</span>
-        <span>Sarthak Pal</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/sarthakpal16">LinkedIn <span aria-hidden="true">↗</span></a>
-        <a href="https://github.com/sarthakpal16">GitHub <span aria-hidden="true">↗</span></a>
-        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
-      </div>
-    </div>
-  </footer>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var button = document.querySelector('.theme-toggle');
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      function current() {
+        return root.dataset.theme || (media.matches ? 'dark' : 'light');
+      }
+      function sync() {
+        button.setAttribute('aria-pressed', current() === 'dark' ? 'true' : 'false');
+      }
+      button.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        sync();
+      });
+      if (media.addEventListener) media.addEventListener('change', sync);
+      sync();
+    })();
+  </script>
 </body>
 </html>
