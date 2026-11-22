@@ -268,7 +268,7 @@ h2 {
 /* Study and work path */
 .path-scroll { overflow-x: auto; padding-bottom: 0.25rem; }
 .path-scroll:focus-visible { outline-offset: 4px; }
-.path-chart { min-width: 840px; }
+.path-chart { min-width: 52.5rem; }
 
 .lane {
   display: grid;
