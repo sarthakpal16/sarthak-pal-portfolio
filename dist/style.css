@@ -1,5 +1,7 @@
 /* Sarthak Pal — portfolio
-   Light and dark palettes follow the system setting; the header button overrides it. */
+   Light and dark palettes follow the system setting; the header button overrides it.
+   Signature motif: the Delhi-to-Arizona route, drawn in marigold around the portrait
+   and echoed once in the study lane of the timeline. */
 
 :root {
   color-scheme: light;
@@ -10,11 +12,12 @@
   --ink-strong: #1a1a1a;
   --muted: #6b6b6b;
   --accent: #1f4fd1;
+  --route: #b06f00;
   --border: rgba(0, 0, 0, 0.1);
   --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --measure: 880px;
+  --measure: 55rem;
 }
 
 :root[data-theme="dark"] {
@@ -25,7 +28,8 @@
   --ink: #d4d7dc;
   --ink-strong: #f0f1f3;
   --muted: #8a9099;
-  --accent: #2dd4bf;
+  --accent: #8fabff;
+  --route: #f3b94a;
   --border: rgba(255, 255, 255, 0.1);
   --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
@@ -39,7 +43,8 @@
     --ink: #d4d7dc;
     --ink-strong: #f0f1f3;
     --muted: #8a9099;
-    --accent: #2dd4bf;
+    --accent: #8fabff;
+    --route: #f3b94a;
     --border: rgba(255, 255, 255, 0.1);
     --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
@@ -62,6 +67,18 @@ body {
 
 h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 img { display: block; max-width: 100%; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 a { color: var(--accent); text-underline-offset: 0.18em; }
 
@@ -173,16 +190,80 @@ h3 { font-size: 1.3rem; line-height: 1.25; }
 
 .intro-copy { flex: 1 1 auto; min-width: 0; }
 
-.portrait {
+/* Portrait with the Delhi-to-Arizona route arcing over it */
+.route-portrait {
+  position: relative;
   flex-shrink: 0;
-  width: 220px;
-  height: 220px;
+  width: clamp(15rem, 36vw, 21rem);
+  aspect-ratio: 340 / 290;
+  margin: 0 0 1.25rem;
+}
+
+.portrait {
+  position: absolute;
+  top: 19.31%;
+  left: 13.53%;
+  width: 61.18%;
+  height: auto;
+  aspect-ratio: 1;
   border: 1px solid var(--border);
   border-radius: 50%;
   object-fit: cover;
   object-position: 4% 50%;
   background: var(--bg-deep);
 }
+
+.route {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.route-line {
+  fill: none;
+  stroke: var(--route);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1 7;
+}
+.route-draw {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 12;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.route-node { stroke: var(--route); stroke-width: 2; }
+.route-node.origin { fill: var(--bg); }
+.route-node.arrival { fill: var(--route); }
+
+.route-label {
+  position: absolute;
+  display: grid;
+  color: var(--ink-strong);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.route-label span {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+.route-label.origin { top: 91%; left: 0; }
+.route-label.arrival { top: 74.5%; right: 0; text-align: right; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .route-draw { animation: route-draw 1.6s cubic-bezier(0.6, 0, 0.3, 1) 0.25s both; }
+  .route-node.arrival { animation: route-arrive 0.35s ease-out 1.7s both; transform-box: fill-box; transform-origin: center; }
+}
+@keyframes route-draw { from { stroke-dashoffset: 1; } }
+@keyframes route-arrive { from { opacity: 0; transform: scale(0.2); } }
 
 .tagline {
   max-width: 34ch;
@@ -199,7 +280,7 @@ h3 { font-size: 1.3rem; line-height: 1.25; }
   color: var(--muted);
   font-size: 0.98rem;
 }
-.meta span + span::before { content: "\00b7"; margin: 0 0.5rem; }
+.meta { flex-direction: column; }
 
 .links {
   display: flex;
@@ -253,13 +334,14 @@ h3 { font-size: 1.3rem; line-height: 1.25; }
 
 h2 {
   margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.45rem;
   border-bottom: 1px solid var(--border);
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  color: var(--ink-strong);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .org, .when { color: var(--muted); }
@@ -268,26 +350,24 @@ h2 {
 /* Study and work path */
 .path-scroll { overflow-x: auto; padding-bottom: 0.25rem; }
 .path-scroll:focus-visible { outline-offset: 4px; }
-.path-chart { min-width: 52.5rem; }
+.path-chart { min-width: 52.5rem; padding-top: 1.4rem; }
 
 .lane {
   display: grid;
-  grid-template-columns: 4.5rem 1fr;
+  grid-template-columns: 3.75rem 1fr;
   align-items: center;
 }
 .lane + .lane { margin-top: 6px; }
 
 .lane-name {
   color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .plot {
   position: relative;
-  height: 3.1rem;
+  height: 3.3rem;
   border-radius: 8px;
   background: repeating-linear-gradient(90deg, var(--border) 0 1px, transparent 1px calc(100% / 9));
 }
@@ -299,7 +379,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0.55rem;
+  padding: 0 0.5rem;
   overflow: hidden;
   border-radius: 8px;
   background: var(--accent);
@@ -313,8 +393,8 @@ h2 {
 .bar.narrow { padding: 0; }
 
 .bar b, .bar-label b { font-size: 0.82rem; line-height: 1.2; }
-.bar small, .bar-label small { font-size: 0.68rem; line-height: 1.2; }
-.bar small { opacity: 0.85; }
+.bar small, .bar-label small { font-size: 0.7rem; line-height: 1.3; }
+.bar small { opacity: 0.9; white-space: normal; text-wrap: balance; }
 
 .bar-label {
   position: absolute;
@@ -329,8 +409,37 @@ h2 {
   white-space: nowrap;
 }
 .bar-label small { color: var(--muted); }
+.bar-label { padding-left: 0.3rem; background: var(--bg); }
 
 .axis .plot { height: 1.2rem; background: none; }
+
+/* Echo of the hero route: the hop from the Delhi degree to the Arizona one */
+.hop {
+  position: absolute;
+  bottom: 100%;
+  height: 1.25rem;
+  overflow: visible;
+}
+.hop path {
+  fill: none;
+  stroke: var(--route);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1 6;
+  vector-effect: non-scaling-stroke;
+}
+.hop-node {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 2px solid var(--route);
+  border-radius: 50%;
+  background: var(--bg);
+  transform: translate(-50%, -50%);
+}
+.hop-node.arrival { background: var(--route); }
 .tick {
   position: absolute;
   top: 0;
@@ -475,13 +584,35 @@ h2 {
 }
 
 /* Skills */
-.skills {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.8rem 1.25rem;
+.skills-intro { margin-bottom: 1rem; color: var(--muted); font-size: 1rem; }
+
+.skill-list {
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+  list-style: none;
 }
-.skills dt { padding-top: 0.2rem; color: var(--ink-strong); font-weight: 600; }
-.skills dd { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  grid-template-areas: "area tools" "area use";
+  gap: 0.35rem 1.5rem;
+  padding: 1rem 1.35rem;
+}
+.skill + .skill { border-top: 1px solid var(--border); }
+.skill h3 { grid-area: area; padding-top: 0.15rem; font-size: 1.2rem; }
+.skill-tools { grid-area: tools; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-tools .chip {
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  color: var(--ink-strong);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.skill-use { grid-area: use; color: var(--ink); font-size: 0.98rem; }
+
+#exp-paytm,
+.project { scroll-margin-top: 4.5rem; }
 
 /* Education */
 .edu {
@@ -588,9 +719,8 @@ h2 {
 @media (max-width: 600px) {
   .page { padding-top: 2rem; }
   .intro { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .portrait { width: 128px; height: 128px; }
-  .meta { flex-direction: column; }
-  .meta span + span::before { content: none; }
+  .route-portrait { width: min(16rem, 100%); }
+  .route-label { font-size: 0.88rem; }
   .jump {
     padding-right: 1.5rem;
     -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 1.5rem), transparent);
@@ -604,8 +734,7 @@ h2 {
   .t-logo { left: -2.5rem; width: 2.1rem; height: 2.1rem; font-size: 1rem; }
   .t-card { padding: 0.9rem 1rem 1rem; }
   .project { padding: 1rem; }
-  .skills { grid-template-columns: 1fr; gap: 0.4rem; }
-  .skills dd { margin-bottom: 0.6rem; }
+  .skill { grid-template-columns: minmax(0, 1fr); grid-template-areas: "area" "tools" "use"; gap: 0.5rem; padding: 1rem; }
   .edu { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
   .edu .when { padding-left: 2.75rem; }
   .contact-card { padding: 1.5rem 1rem; }
@@ -615,6 +744,7 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .route-draw, .route-node.arrival { animation: none; }
   .t-card { transition: none; }
   .t-card:hover { transform: none; }
 }
