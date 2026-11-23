@@ -1,6 +1,6 @@
-# Logo and icon sources
+# Logo, icon and font sources
 
-Organization logos are self-hosted under `dist/assets/`. Skill icon symbols are embedded in `dist/index.html`. Vector artwork uses path data only, with no scripts, links or embedded images. Company and university marks are trademarks of their owners. They are used only to identify Sarthak's employers and schools next to their names, and are shown decoratively (`alt=""`, inside `aria-hidden` tiles) because each name is visible as text beside its mark.
+Organization logos are self-hosted under `dist/assets/`. Skill icon symbols are embedded in `dist/index.html`, and the Archivo typeface is embedded in `dist/fonts.css`. Vector artwork uses path data only, with no scripts, links or embedded images. Company and university marks are trademarks of their owners. They are used only to identify Sarthak's employers and schools next to their names, and are shown decoratively (`alt=""`, inside `aria-hidden` tiles) because each name is visible as text beside its mark.
 
 | Asset | Source | Notes |
 | --- | --- | --- |
@@ -11,3 +11,4 @@ Organization logos are self-hosted under `dist/assets/`. Skill icon symbols are 
 | `logo-iiitd.png` | iiitd.ac.in/about/graphic-identity, sites/default/files/images/graphicidentity/logo.jpg | Official mark, trimmed to its edges, on a white tile |
 | Skill icons (python, apachespark, apachekafka, neo4j, langgraph, react, nodedotjs) | Simple Icons 16.38.1 (npm, CC0-1.0 icon data) | Single-color paths drawn in the text color. Brand guidelines apply: python.org/community/logos, apache.org/foundation/marks, neo4j.com/brand, nodejs.org/en/about/branding |
 | Skill icons (database, server, queue) | Original generic glyphs drawn for this site | Fallbacks: a database glyph for SQL; a server glyph for AWS EC2 and a queue glyph for SQS. AWS service icons are not in Simple Icons, and AWS licenses its architecture icons for diagrams only, so its service icons were not used |
+| `fonts.css` (Archivo) | Google Fonts, Archivo v25 variable font (width 62–125%, weight 100–900), Latin subset WOFF2, fetched 2026-11-22 | SIL Open Font License 1.1. Embedded as a data URI so the page renders the same when `dist/index.html` is opened directly as a file |

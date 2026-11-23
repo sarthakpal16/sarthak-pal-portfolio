@@ -6,27 +6,28 @@
   <title>Sarthak Pal · Software engineer</title>
   <meta name="description" content="Sarthak Pal: software engineer working on data systems and applied AI. MSc in Computer Science, Arizona State University.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4fd1'/%3E%3Ctext x='32' y='43' text-anchor='middle' fill='%23ffffff' font-family='Iowan Old Style,Palatino,Georgia,serif' font-weight='700' font-size='30'%3ESP%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#eef0ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15172b" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1e33'/%3E%3Crect x='10' y='40' width='44' height='8' rx='4' fill='%23e9b320'/%3E%3Ctext x='32' y='34' text-anchor='middle' fill='%23ffffff' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='24'%3ESP%3C/text%3E%3C/svg%3E">
   <script>
     try {
       var savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
     } catch (e) {}
   </script>
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip" href="#top">Skip to content</a>
 
   <nav class="topbar" aria-label="Sections">
-    <a class="brand" href="#top" aria-label="Sarthak Pal, back to top">SP</a>
+    <a class="brand" href="#top" aria-label="Sarthak Pal, back to top">Sarthak Pal</a>
     <div class="jump">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#path">Path</a>
       <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
@@ -40,24 +41,11 @@
 
   <main id="top" class="page" tabindex="-1">
     <header class="intro">
-      <figure class="route-portrait">
-        <svg class="route" viewBox="0 0 340 290" aria-hidden="true" focusable="false">
-          <defs>
-            <mask id="route-reveal" maskUnits="userSpaceOnUse" x="-30" y="-60" width="400" height="370">
-              <path class="route-draw" d="M22 252 C -20 0, 262 -76, 318 204" pathLength="1"/>
-            </mask>
-          </defs>
-          <path class="route-line" d="M22 252 C -20 0, 262 -76, 318 204" mask="url(#route-reveal)"/>
-          <circle class="route-node origin" cx="22" cy="252" r="5.5"/>
-          <circle class="route-node arrival" cx="318" cy="204" r="5.5"/>
-        </svg>
+      <h1 class="name">Sarthak Pal</h1>
+      <figure class="portrait-frame">
         <img class="portrait" src="portrait.jpg" width="594" height="455" alt="Sarthak Pal">
-        <span class="route-label origin" aria-hidden="true">Delhi <span>2018</span></span>
-        <span class="route-label arrival" aria-hidden="true">Arizona <span>2024</span></span>
-        <figcaption class="sr-only">A route from Delhi, where my BTech began in 2018, to Arizona, where my MSc began in 2024.</figcaption>
       </figure>
       <div class="intro-copy">
-        <h1>Sarthak Pal</h1>
         <p class="tagline">Software engineer. I work on data systems and applied AI.</p>
         <p class="meta">
           <span>MSc Computer Science, Arizona State University&nbsp;’26</span>
@@ -77,29 +65,298 @@
             Contact
           </a>
         </nav>
+        <a class="route" href="#path">
+          <span class="sr-only">A route from Delhi, where my BTech began in 2018, to Arizona, where my MSc began in 2024. Go to the timeline.</span>
+          <span class="route-end" aria-hidden="true">Delhi <span>2018</span></span>
+          <span class="route-line" aria-hidden="true"></span>
+          <span class="route-end arrival" aria-hidden="true">Arizona <span>2024</span></span>
+        </a>
       </div>
     </header>
 
-    <ul class="glance" aria-label="At a glance">
-      <li>
-        <span class="g-value">3</span>
-        <span class="g-label">industry roles</span>
-        <span class="g-detail">Citi, Beganto Software Systems and Paytm</span>
-      </li>
-      <li>
-        <span class="g-value">2</span>
-        <span class="g-label">computer science degrees</span>
-        <span class="g-detail">BTech at IIIT Delhi, MSc at Arizona State University</span>
-      </li>
-      <li>
-        <span class="g-value">3</span>
-        <span class="g-label">featured projects</span>
-        <span class="g-detail">AI trip planning, streaming graph analytics, queue-based cloud inference</span>
-      </li>
-    </ul>
+    <section id="projects" class="projects" aria-labelledby="projects-heading">
+      <div class="projects-head">
+        <h2 id="projects-heading">Projects</h2>
+        <p class="projects-intro">Three systems I built. Each diagram follows the data through it; choose a step to trace it.</p>
+        <ul class="project-index" aria-label="Jump to a project">
+          <li><a href="#project-planner"><svg class="glyph" viewBox="0 0 32 20" aria-hidden="true" focusable="false"><rect x="1" y="11" width="8" height="7" rx="2"/><path d="M16 9 21 14.5 16 20 11 14.5Z"/><rect x="23" y="11" width="8" height="7" rx="2"/><path class="g-line" d="M16 9C16 2 5 2 5 10"/></svg>AI travel planner</a></li>
+          <li><a href="#project-graph"><svg class="glyph" viewBox="0 0 32 20" aria-hidden="true" focusable="false"><path class="g-line" d="M4 5 14 3 26 7 17 15 6 16 4 5M14 3 17 15M26 7 28 17 17 15"/><circle cx="4" cy="5" r="2.2"/><circle cx="14" cy="3" r="2.2"/><circle cx="26" cy="7" r="2.2"/><circle cx="17" cy="15" r="3.4"/><circle cx="6" cy="16" r="2.2"/><circle cx="28" cy="17" r="2.2"/></svg>Real-time graph analytics</a></li>
+          <li><a href="#project-cloud"><svg class="glyph" viewBox="0 0 32 20" aria-hidden="true" focusable="false"><rect x="1" y="7" width="5" height="7" rx="1.5"/><rect class="g-line" x="8.5" y="6.5" width="14" height="8" rx="4"/><rect x="11" y="8.5" width="3" height="4" rx="1"/><rect x="16" y="8.5" width="3" height="4" rx="1"/><rect x="25" y="1" width="6" height="5" rx="1.5"/><rect x="25" y="8" width="6" height="5" rx="1.5"/><rect x="25" y="15" width="6" height="5" rx="1.5"/></svg>Elastic recognition service</a></li>
+        </ul>
+      </div>
 
-    <section id="path" aria-labelledby="path-heading">
-      <h2 id="path-heading">Eight years at a glance</h2>
+      <article class="project" id="project-planner" aria-labelledby="p-planner">
+        <div class="p-text">
+          <h3 id="p-planner">AI travel planner</h3>
+          <p class="p-kind">Applied AI, built with Python and LangGraph.</p>
+          <p class="p-what">Plans activities for a trip and adjusts the itinerary to fit the traveler’s budget.</p>
+          <ol class="flow" aria-label="How it works">
+            <li><button type="button" data-step="1" aria-pressed="false" data-note="The traveler’s trip details, including the budget, are the input.">Trip details</button></li>
+            <li><button type="button" data-step="2" aria-pressed="false" data-note="The planner proposes activities for the trip.">Planned activities</button></li>
+            <li><button type="button" data-step="3" aria-pressed="false" data-note="The planned activities are checked against the budget. A plan that doesn’t fit goes back to be replanned.">Budget check</button></li>
+            <li><button type="button" data-step="4" aria-pressed="false" data-note="The itinerary that comes out fits the traveler’s budget.">Adjusted itinerary</button></li>
+          </ol>
+          <p class="step-note" aria-live="polite"></p>
+        </div>
+        <figure class="diagram" data-diagram="planner">
+          <svg class="wide" viewBox="0 18 560 172" role="img" aria-label="Trip details go to planned activities, then a budget check. Over budget loops back to planning; a plan that fits becomes the adjusted itinerary." focusable="false">
+            <defs>
+              <marker id="arrow-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" class="arrowhead"/></marker>
+            </defs>
+            <g class="part" data-part="3">
+              <path class="edge loop" d="M356 100 C356 34, 218 34, 218 110" marker-end="url(#arrow-a)"/>
+              <text class="dl small" x="287" y="40" text-anchor="middle">over budget</text>
+            </g>
+            <g class="part" data-part="1">
+              <rect class="node" x="8" y="114" width="112" height="52" rx="10"/>
+              <text class="dl" x="64" y="145" text-anchor="middle">Trip details</text>
+            </g>
+            <path class="edge" d="M120 140 H146" marker-end="url(#arrow-a)"/>
+            <g class="part" data-part="2">
+              <rect class="node" x="148" y="114" width="140" height="52" rx="10"/>
+              <text class="dl" x="218" y="136" text-anchor="middle">Planned</text>
+              <text class="dl" x="218" y="155" text-anchor="middle">activities</text>
+            </g>
+            <path class="edge" d="M288 140 H304" marker-end="url(#arrow-a)"/>
+            <g class="part" data-part="3">
+              <path class="node" d="M356 100 406 140 356 180 306 140Z"/>
+              <text class="dl" x="356" y="137" text-anchor="middle">Budget</text>
+              <text class="dl" x="356" y="155" text-anchor="middle">check</text>
+            </g>
+            <g class="part" data-part="4">
+              <path class="edge" d="M406 140 H438" marker-end="url(#arrow-a)"/>
+              <text class="dl small" x="422" y="128" text-anchor="middle">fits</text>
+              <rect class="node" x="440" y="114" width="112" height="52" rx="10"/>
+              <text class="dl" x="496" y="136" text-anchor="middle">Adjusted</text>
+              <text class="dl" x="496" y="155" text-anchor="middle">itinerary</text>
+            </g>
+          </svg>
+          <svg class="tall" viewBox="0 0 360 326" role="img" aria-label="Trip details go to planned activities, then a budget check. Over budget loops back to planning; a plan that fits becomes the adjusted itinerary." focusable="false">
+            <defs>
+              <marker id="arrow-a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" class="arrowhead"/></marker>
+            </defs>
+            <g class="part" data-part="1">
+              <rect class="node" x="70" y="8" width="160" height="46" rx="10"/>
+              <text class="dl" x="150" y="37" text-anchor="middle">Trip details</text>
+            </g>
+            <path class="edge" d="M150 54 V78" marker-end="url(#arrow-a2)"/>
+            <g class="part" data-part="2">
+              <rect class="node" x="70" y="80" width="160" height="46" rx="10"/>
+              <text class="dl" x="150" y="109" text-anchor="middle">Planned activities</text>
+            </g>
+            <path class="edge" d="M150 126 V150" marker-end="url(#arrow-a2)"/>
+            <g class="part" data-part="3">
+              <path class="edge loop" d="M220 200 C292 200, 292 103, 232 103" marker-end="url(#arrow-a2)"/>
+              <text class="dl small" x="282" y="157">over</text>
+              <text class="dl small" x="282" y="173">budget</text>
+              <path class="node" d="M150 152 220 200 150 248 80 200Z"/>
+              <text class="dl" x="150" y="205" text-anchor="middle">Budget check</text>
+            </g>
+            <g class="part" data-part="4">
+              <path class="edge" d="M150 248 V272" marker-end="url(#arrow-a2)"/>
+              <text class="dl small" x="160" y="265">fits</text>
+              <rect class="node" x="70" y="274" width="160" height="46" rx="10"/>
+              <text class="dl" x="150" y="303" text-anchor="middle">Adjusted itinerary</text>
+            </g>
+          </svg>
+        </figure>
+      </article>
+
+      <article class="project" id="project-graph" aria-labelledby="p-graph">
+        <div class="p-text">
+          <h3 id="p-graph">Real-time graph analytics</h3>
+          <p class="p-kind">Streaming data, built with Kafka and Neo4j.</p>
+          <p class="p-what">Streams New York City taxi trips into a graph. PageRank ranks connected locations, and breadth-first search traces paths between them.</p>
+          <ol class="flow" aria-label="How it works">
+            <li><button type="button" data-step="1" aria-pressed="false" data-note="Each taxi trip links the location where it started to the location where it ended.">NYC taxi trips</button></li>
+            <li><button type="button" data-step="2" aria-pressed="false" data-note="Trips arrive as a stream through Kafka.">Kafka stream</button></li>
+            <li><button type="button" data-step="3" aria-pressed="false" data-note="Neo4j stores locations as nodes and the trips between them as connections.">Neo4j graph</button></li>
+            <li><button type="button" data-step="4" aria-pressed="false" data-note="PageRank sizes each location by how connected it is; breadth-first search traces a path from one location to another.">PageRank + BFS</button></li>
+          </ol>
+          <p class="step-note" aria-live="polite"></p>
+        </div>
+        <figure class="diagram" data-diagram="graph">
+          <svg viewBox="0 0 560 300" role="img" aria-label="Taxi trips flow through a Kafka stream into a Neo4j graph of locations. PageRank sizes locations by connectedness and breadth-first search traces a path between two of them." focusable="false">
+            <defs>
+              <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" class="arrowhead"/></marker>
+            </defs>
+            <g class="part" data-part="1">
+              <text class="dl" x="52" y="96" text-anchor="middle">Taxi trips</text>
+              <g class="trip"><rect class="node" x="8" y="108" width="88" height="24" rx="6"/><circle cx="28" cy="120" r="4"/><path class="edge thin" d="M34 120 H70"/><circle cx="76" cy="120" r="4" class="hollow"/></g>
+              <g class="trip"><rect class="node" x="8" y="138" width="88" height="24" rx="6"/><circle cx="28" cy="150" r="4"/><path class="edge thin" d="M34 150 H70"/><circle cx="76" cy="150" r="4" class="hollow"/></g>
+              <g class="trip"><rect class="node" x="8" y="168" width="88" height="24" rx="6"/><circle cx="28" cy="180" r="4"/><path class="edge thin" d="M34 180 H70"/><circle cx="76" cy="180" r="4" class="hollow"/></g>
+            </g>
+            <path class="edge" d="M98 150 H114" marker-end="url(#arrow-g)"/>
+            <g class="part" data-part="2">
+              <text class="dl" x="166" y="124" text-anchor="middle">Kafka</text>
+              <rect class="node" x="116" y="134" width="100" height="32" rx="16"/>
+              <rect class="msg" x="128" y="143" width="14" height="14" rx="3"/>
+              <rect class="msg" x="148" y="143" width="14" height="14" rx="3"/>
+              <rect class="msg" x="168" y="143" width="14" height="14" rx="3"/>
+              <rect class="msg" x="188" y="143" width="14" height="14" rx="3"/>
+            </g>
+            <path class="edge" d="M216 150 H238" marker-end="url(#arrow-g)"/>
+            <g class="part" data-part="3 4">
+              <text class="dl" x="248" y="26">Neo4j</text>
+              <g class="g-edges">
+                <line class="g-edge" data-edge="a b" x1="276" y1="84" x2="356" y2="50"/>
+                <line class="g-edge" data-edge="b c" x1="356" y1="50" x2="446" y2="80"/>
+                <line class="g-edge" data-edge="c d" x1="446" y1="80" x2="532" y2="54"/>
+                <line class="g-edge" data-edge="a e" x1="276" y1="84" x2="300" y2="176"/>
+                <line class="g-edge" data-edge="b f" x1="356" y1="50" x2="404" y2="164"/>
+                <line class="g-edge" data-edge="c f" x1="446" y1="80" x2="404" y2="164"/>
+                <line class="g-edge" data-edge="c g" x1="446" y1="80" x2="502" y2="152"/>
+                <line class="g-edge" data-edge="d g" x1="532" y1="54" x2="502" y2="152"/>
+                <line class="g-edge" data-edge="e f" x1="300" y1="176" x2="404" y2="164"/>
+                <line class="g-edge" data-edge="f g" x1="404" y1="164" x2="502" y2="152"/>
+                <line class="g-edge" data-edge="e h" x1="300" y1="176" x2="334" y2="262"/>
+                <line class="g-edge" data-edge="f h" x1="404" y1="164" x2="334" y2="262"/>
+                <line class="g-edge" data-edge="f i" x1="404" y1="164" x2="452" y2="254"/>
+                <line class="g-edge" data-edge="g i" x1="502" y1="152" x2="452" y2="254"/>
+                <line class="g-edge" data-edge="g j" x1="502" y1="152" x2="538" y2="238"/>
+                <line class="g-edge" data-edge="i j" x1="452" y1="254" x2="538" y2="238"/>
+                <line class="g-edge" data-edge="h i" x1="334" y1="262" x2="452" y2="254"/>
+              </g>
+              <g class="g-nodes">
+                <circle class="g-node" data-node="a" cx="276" cy="84" r="8"/>
+                <circle class="g-node" data-node="b" cx="356" cy="50" r="8"/>
+                <circle class="g-node" data-node="c" cx="446" cy="80" r="8"/>
+                <circle class="g-node" data-node="d" cx="532" cy="54" r="8"/>
+                <circle class="g-node" data-node="e" cx="300" cy="176" r="8"/>
+                <circle class="g-node" data-node="f" cx="404" cy="164" r="8"/>
+                <circle class="g-node" data-node="g" cx="502" cy="152" r="8"/>
+                <circle class="g-node" data-node="h" cx="334" cy="262" r="8"/>
+                <circle class="g-node" data-node="i" cx="452" cy="254" r="8"/>
+                <circle class="g-node" data-node="j" cx="538" cy="238" r="8"/>
+              </g>
+              <text class="dl small endpoint" data-endpoint="from" x="0" y="0" text-anchor="middle">from</text>
+              <text class="dl small endpoint" data-endpoint="to" x="0" y="0" text-anchor="middle">to</text>
+            </g>
+          </svg>
+          <figcaption>Schematic: dots stand for locations, lines for the trips between them.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project" id="project-cloud" aria-labelledby="p-cloud">
+        <div class="p-text">
+          <h3 id="p-cloud">Elastic recognition service</h3>
+          <p class="p-kind">Cloud systems, built with AWS EC2 and SQS.</p>
+          <p class="p-what">Buffers recognition requests in an SQS queue so EC2 inference workers can process them independently of the web tier.</p>
+          <ol class="flow" aria-label="How it works">
+            <li><button type="button" data-step="1" aria-pressed="false" data-note="The web tier accepts recognition requests and puts them on the queue.">Web tier</button></li>
+            <li><button type="button" data-step="2" aria-pressed="false" data-note="Requests wait in the SQS queue, so the web tier never waits on inference.">SQS request queue</button></li>
+            <li><button type="button" data-step="3" aria-pressed="false" data-note="EC2 inference workers take requests from the queue and process them independently of the web tier.">EC2 inference workers</button></li>
+          </ol>
+          <p class="step-note" aria-live="polite"></p>
+        </div>
+        <figure class="diagram" data-diagram="cloud">
+          <svg class="wide" viewBox="0 0 560 214" role="img" aria-label="The web tier puts recognition requests on an SQS queue; EC2 inference workers take requests from the queue." focusable="false">
+            <defs>
+              <marker id="arrow-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" class="arrowhead"/></marker>
+            </defs>
+            <g class="part" data-part="1">
+              <rect class="node" x="8" y="80" width="108" height="60" rx="10"/>
+              <text class="dl" x="62" y="115" text-anchor="middle">Web tier</text>
+            </g>
+            <path class="edge" d="M116 110 H142" marker-end="url(#arrow-c)"/>
+            <g class="part" data-part="2">
+              <text class="dl" x="256" y="78" text-anchor="middle">SQS request queue</text>
+              <rect class="node tube" x="144" y="90" width="224" height="40" rx="20"/>
+            </g>
+            <g class="part" data-part="3">
+              <text class="dl" x="476" y="22" text-anchor="middle">EC2 inference workers</text>
+              <rect class="node" x="400" y="34" width="152" height="44" rx="10"/>
+              <rect class="node" x="400" y="88" width="152" height="44" rx="10"/>
+              <rect class="node" x="400" y="142" width="152" height="44" rx="10"/>
+              <text class="dl small" x="420" y="61">worker</text>
+              <text class="dl small" x="420" y="115">worker</text>
+              <text class="dl small" x="420" y="169">worker</text>
+              <path class="edge" d="M368 110 C384 110, 380 56, 398 56" marker-end="url(#arrow-c)"/>
+              <path class="edge" d="M368 110 H398" marker-end="url(#arrow-c)"/>
+              <path class="edge" d="M368 110 C384 110, 380 164, 398 164" marker-end="url(#arrow-c)"/>
+            </g>
+            <g class="queue-msgs">
+              <rect class="msg q" x="334" y="100" width="22" height="20" rx="4"/>
+              <rect class="msg q" x="300" y="100" width="22" height="20" rx="4"/>
+              <rect class="msg q" x="266" y="100" width="22" height="20" rx="4"/>
+              <rect class="msg q" x="232" y="100" width="22" height="20" rx="4"/>
+              <rect class="msg q" x="198" y="100" width="22" height="20" rx="4"/>
+              <rect class="msg q" x="164" y="100" width="22" height="20" rx="4"/>
+            </g>
+          </svg>
+          <svg class="tall" viewBox="0 0 340 262" role="img" aria-label="The web tier puts recognition requests on an SQS queue; EC2 inference workers take requests from the queue." focusable="false">
+            <defs>
+              <marker id="arrow-c2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9Z" class="arrowhead"/></marker>
+            </defs>
+            <g class="part" data-part="1">
+              <rect class="node" x="110" y="8" width="120" height="48" rx="10"/>
+              <text class="dl" x="170" y="37" text-anchor="middle">Web tier</text>
+            </g>
+            <path class="edge" d="M170 56 V94" marker-end="url(#arrow-c2)"/>
+            <g class="part" data-part="2">
+              <text class="dl" x="182" y="80">SQS request queue</text>
+              <rect class="node tube" x="40" y="96" width="260" height="40" rx="20"/>
+            </g>
+            <g class="part" data-part="3">
+              <path class="edge" d="M170 136 C170 160, 60 160, 60 182" marker-end="url(#arrow-c2)"/>
+              <path class="edge" d="M170 136 V182" marker-end="url(#arrow-c2)"/>
+              <path class="edge" d="M170 136 C170 160, 280 160, 280 182" marker-end="url(#arrow-c2)"/>
+              <rect class="node" x="10" y="184" width="100" height="48" rx="10"/>
+              <rect class="node" x="120" y="184" width="100" height="48" rx="10"/>
+              <rect class="node" x="230" y="184" width="100" height="48" rx="10"/>
+              <text class="dl small" x="60" y="226" text-anchor="middle">worker</text>
+              <text class="dl small" x="170" y="226" text-anchor="middle">worker</text>
+              <text class="dl small" x="280" y="226" text-anchor="middle">worker</text>
+              <text class="dl" x="170" y="256" text-anchor="middle">EC2 inference workers</text>
+            </g>
+            <g class="queue-msgs">
+              <rect class="msg qt" x="266" y="106" width="22" height="20" rx="4"/>
+              <rect class="msg qt" x="226" y="106" width="22" height="20" rx="4"/>
+              <rect class="msg qt" x="186" y="106" width="22" height="20" rx="4"/>
+              <rect class="msg qt" x="146" y="106" width="22" height="20" rx="4"/>
+              <rect class="msg qt" x="106" y="106" width="22" height="20" rx="4"/>
+              <rect class="msg qt" x="66" y="106" width="22" height="20" rx="4"/>
+            </g>
+          </svg>
+        </figure>
+      </article>
+    </section>
+
+    <section id="experience" class="band" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <ol class="roles">
+        <li class="role">
+          <span class="logo-tile" aria-hidden="true"><img src="assets/logo-citi.svg" alt="" width="204" height="118"></span>
+          <p class="when">Dec 2025 – May 2026</p>
+          <div class="role-body">
+            <h3>Software engineering</h3>
+            <p class="org">Citi</p>
+          </div>
+        </li>
+        <li class="role">
+          <span class="logo-tile" aria-hidden="true"><img class="logo-mark" src="assets/logo-beganto.png" alt="" width="86" height="81"></span>
+          <p class="when">Dec 2022 – Dec 2023</p>
+          <div class="role-body">
+            <h3>Software developer</h3>
+            <p class="org">Beganto Software Systems</p>
+            <p class="what">Built tools that generated personalized employee training content.</p>
+          </div>
+        </li>
+        <li class="role" id="exp-paytm">
+          <span class="logo-tile" aria-hidden="true"><img class="logo-wide" src="assets/logo-paytm.svg" alt="" width="653" height="214"></span>
+          <p class="when">Aug – Nov 2022</p>
+          <div class="role-body">
+            <h3>Data science intern</h3>
+            <p class="org">Paytm</p>
+            <p class="what">Analyzed transactions with Python, PySpark and SQL.</p>
+            <p class="tags"><span>Python</span><span>PySpark</span><span>SQL</span></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="path" class="band" aria-labelledby="path-heading">
+      <h2 id="path-heading">Eight years, Delhi to Arizona</h2>
       <div class="path-scroll" role="region" aria-label="Study and work timeline, scrolls sideways on small screens" tabindex="0">
         <div class="path-chart" role="img" aria-label="Timeline from 2018 to 2026. Study: BTech in Computer Science at IIIT Delhi, 2018 to 2022; MSc in Computer Science at Arizona State University, 2024 to 2026, after the move from Delhi to Arizona. Work: data science intern at Paytm, August to November 2022; software developer at Beganto Software Systems, December 2022 to December 2023; software engineering at Citi, December 2025 to May 2026.">
           <div class="lane">
@@ -110,6 +367,7 @@
               </svg>
               <span class="hop-node" style="left: 50%;" aria-hidden="true"></span>
               <span class="hop-node arrival" style="left: 72.222%;" aria-hidden="true"></span>
+              <span class="hop-label" style="left: 61.111%;" aria-hidden="true">Delhi to Arizona</span>
               <span class="bar study" style="left: 5.556%; width: 44.444%;" title="BTech, Computer Science · IIIT Delhi · 2018 – 2022">
                 <b>BTech, Computer Science</b>
                 <small>IIIT Delhi · 2018 – 2022</small>
@@ -157,7 +415,7 @@
       </div>
     </section>
 
-    <section id="skills" aria-labelledby="skills-heading">
+    <section id="skills" class="band" aria-labelledby="skills-heading">
       <!-- Keep these symbols inline so Chrome can resolve them in direct-file previews. -->
       <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
         <symbol id="python" viewBox="0 0 24 24"><path d="M11.858 0c-.978.005-1.913.088-2.736.234C6.7.662 6.26 1.558 6.26 3.21v2.182h5.725v.727H4.111c-1.664 0-3.121 1-3.577 2.903-.526 2.181-.549 3.542 0 5.82.407 1.694 1.379 2.902 3.043 2.902h1.969v-2.616c0-1.89 1.635-3.557 3.576-3.557h5.72c1.591 0 2.862-1.31 2.862-2.91v-5.45c0-1.553-1.309-2.718-2.863-2.977A18 18 0 0 0 11.858 0M8.762 1.755c.591 0 1.074.491 1.074 1.095 0 .601-.483 1.087-1.074 1.087A1.08 1.08 0 0 1 7.688 2.85c0-.604.48-1.095 1.074-1.095m9.656 4.364v2.543c0 1.971-1.671 3.63-3.577 3.63H9.122c-1.566 0-2.862 1.34-2.862 2.91v5.452c0 1.551 1.349 2.464 2.862 2.91 1.813.532 3.55.628 5.72 0 1.44-.418 2.862-1.258 2.862-2.91V18.47h-5.719v-.727h8.582c1.664 0 2.284-1.16 2.862-2.903.598-1.793.573-3.518 0-5.819-.41-1.656-1.196-2.903-2.862-2.903zm-3.216 13.807a1.08 1.08 0 0 1 1.074 1.088c0 .604-.48 1.094-1.074 1.094-.592 0-1.075-.49-1.075-1.094 0-.601.483-1.088 1.075-1.088"/></symbol>
@@ -172,7 +430,8 @@
         <symbol id="queue" viewBox="0 0 24 24"><path d="M2 7h4.5v10H2V7Zm6 0h4.5v10H8V7Zm6 0h3.2v10H14V7Zm4.7 1.2L22 12l-3.3 3.8V8.2Z"/></symbol>
       </svg>
       <h2 id="skills-heading">Skills</h2>
-      <p class="skills-intro">The tools I work with, and where I have used them.</p>
+      <div class="band-body">
+        <p class="skills-intro">The tools I work with, and where I have used them.</p>
       <ul class="skill-list">
         <li class="skill">
           <h3>Data analysis</h3>
@@ -200,107 +459,42 @@
           <p class="skill-use">Front ends and server-side JavaScript.</p>
         </li>
       </ul>
-    </section>
-
-    <section id="experience" aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Experience</h2>
-      <ol class="timeline">
-        <li class="t-item">
-          <span class="t-logo" aria-hidden="true"><img src="assets/logo-citi.svg" alt="" width="204" height="118"></span>
-          <article class="t-card">
-            <p class="t-when">Dec 2025 – May 2026</p>
-            <h3>Software engineering</h3>
-            <p class="org">Citi</p>
-          </article>
-        </li>
-        <li class="t-item">
-          <span class="t-logo" aria-hidden="true"><img class="logo-mark" src="assets/logo-beganto.png" alt="" width="86" height="81"></span>
-          <article class="t-card">
-            <p class="t-when">Dec 2022 – Dec 2023</p>
-            <h3>Software developer</h3>
-            <p class="org">Beganto Software Systems</p>
-            <p class="t-what">Built tools that generated personalized employee training content.</p>
-          </article>
-        </li>
-        <li class="t-item" id="exp-paytm">
-          <span class="t-logo" aria-hidden="true"><img class="logo-wide" src="assets/logo-paytm.svg" alt="" width="653" height="214"></span>
-          <article class="t-card">
-            <p class="t-when">Aug – Nov 2022</p>
-            <h3>Data science intern</h3>
-            <p class="org">Paytm</p>
-            <p class="t-what">Analyzed transactions with Python, PySpark and SQL.</p>
-            <p class="t-tags"><span>Python</span><span>PySpark</span><span>SQL</span></p>
-          </article>
-        </li>
-      </ol>
-    </section>
-
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-
-      <article class="project" id="project-planner" aria-labelledby="p-planner">
-        <p class="p-kind">Applied AI</p>
-        <h3 id="p-planner">AI travel planner</h3>
-        <p class="p-what">Plans activities for a trip and adjusts the itinerary to fit the traveler’s budget.</p>
-        <ol class="flow" aria-label="How it works">
-          <li>Trip details</li>
-          <li>Planned activities</li>
-          <li>Budget check</li>
-          <li>Adjusted itinerary</li>
-        </ol>
-        <p class="stack"><span>Python</span><span>LangGraph</span></p>
-      </article>
-
-      <article class="project" id="project-graph" aria-labelledby="p-graph">
-        <p class="p-kind">Streaming data</p>
-        <h3 id="p-graph">Real-time graph analytics</h3>
-        <p class="p-what">Streams New York City taxi trips into a graph. PageRank ranks connected locations, and breadth-first search traces paths between them.</p>
-        <ol class="flow" aria-label="How it works">
-          <li>NYC taxi trips</li>
-          <li>Kafka stream</li>
-          <li>Neo4j graph</li>
-          <li>PageRank + BFS</li>
-        </ol>
-        <p class="stack"><span>Kafka</span><span>Neo4j</span></p>
-      </article>
-
-      <article class="project" id="project-cloud" aria-labelledby="p-cloud">
-        <p class="p-kind">Cloud systems</p>
-        <h3 id="p-cloud">Elastic recognition service</h3>
-        <p class="p-what">Buffers recognition requests in an SQS queue so EC2 inference workers can process them independently of the web tier.</p>
-        <ol class="flow" aria-label="How it works">
-          <li>Web tier</li>
-          <li>SQS request queue</li>
-          <li>EC2 inference workers</li>
-        </ol>
-        <p class="stack"><span>AWS EC2</span><span>SQS</span></p>
-      </article>
-    </section>
-
-    <section id="education" aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
-      <div class="edu">
-        <span class="edu-name">
-          <span class="edu-mark" aria-hidden="true"><img src="assets/logo-asu.png" alt="" width="264" height="112"></span>
-          <span>MSc, Computer Science <span class="org">· Arizona State University</span></span>
-        </span>
-        <span class="when">2024 – 2026</span>
       </div>
-      <div class="edu">
-        <span class="edu-name">
-          <span class="edu-mark" aria-hidden="true"><img src="assets/logo-iiitd.png" alt="" width="283" height="142"></span>
-          <span>BTech, Computer Science <span class="org">· IIIT Delhi</span></span>
-        </span>
-        <span class="when">2018 – 2022</span>
+    </section>
+
+    <section id="education" class="band" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="band-body">
+        <div class="edu">
+          <span class="logo-tile" aria-hidden="true"><img src="assets/logo-asu.png" alt="" width="264" height="112"></span>
+          <p class="edu-name">MSc, Computer Science <span class="org">Arizona State University</span></p>
+          <p class="when">2024 – 2026</p>
+        </div>
+        <div class="edu">
+          <span class="logo-tile" aria-hidden="true"><img src="assets/logo-iiitd.png" alt="" width="283" height="142"></span>
+          <p class="edu-name">BTech, Computer Science <span class="org">IIIT Delhi</span></p>
+          <p class="when">2018 – 2022</p>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact" aria-labelledby="contact-heading" tabindex="-1">
-      <h2 id="contact-heading">Contact</h2>
-      <div class="contact-card">
+      <div class="contact-lede">
+        <h2 id="contact-heading">Contact</h2>
         <p class="cta">Want to talk about data systems or applied AI?</p>
         <p class="contact-note">Send a message here, or reach me through either profile.</p>
-
+        <ul class="profile-urls" aria-label="Profile links">
+          <li>
+            <span class="profile-name">GitHub</span>
+            <a href="https://github.com/sarthakpal16" target="_blank" rel="noopener noreferrer">https://github.com/sarthakpal16</a>
+          </li>
+          <li>
+            <span class="profile-name">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/sarthakpal16" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/sarthakpal16</a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-body">
         <form class="contact-form" method="post" action="https://formsubmit.co/5375573fc088dc7817876f744c7a0642">
           <div class="form-row">
             <label class="field">
@@ -319,41 +513,10 @@
           <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off">
           <button class="send" type="submit">Send message</button>
         </form>
-
-        <ul class="profile-urls" aria-label="Profile links">
-          <li>
-            <span class="profile-name">GitHub</span>
-            <a href="https://github.com/sarthakpal16" target="_blank" rel="noopener noreferrer">https://github.com/sarthakpal16</a>
-          </li>
-          <li>
-            <span class="profile-name">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/sarthakpal16" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/sarthakpal16</a>
-          </li>
-        </ul>
       </div>
     </section>
   </main>
 
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var button = document.querySelector('.theme-toggle');
-      var media = window.matchMedia('(prefers-color-scheme: dark)');
-      function current() {
-        return root.dataset.theme || (media.matches ? 'dark' : 'light');
-      }
-      function sync() {
-        button.setAttribute('aria-pressed', current() === 'dark' ? 'true' : 'false');
-      }
-      button.addEventListener('click', function () {
-        var next = current() === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        try { localStorage.setItem('theme', next); } catch (e) {}
-        sync();
-      });
-      if (media.addEventListener) media.addEventListener('change', sync);
-      sync();
-    })();
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
