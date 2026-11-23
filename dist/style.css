@@ -306,7 +306,6 @@ h2 {
   column-gap: clamp(2rem, 6vw, 6rem);
   align-items: start;
   margin-top: clamp(3.5rem, 7vw, 6rem);
-  scroll-margin-top: 5rem;
 }
 .p-text h3 {
   font-size: clamp(1.5rem, 2.4vw, 2rem);
@@ -460,7 +459,6 @@ h2 {
   align-items: start;
   padding: 1.4rem 0;
   border-bottom: 1px solid var(--rule);
-  scroll-margin-top: 5rem;
 }
 .role:first-child { padding-top: 0.25rem; }
 .role .when { padding-top: 0.2rem; color: var(--graphite); font-size: 0.98rem; font-variant-numeric: tabular-nums; }
@@ -614,7 +612,6 @@ h2 {
   border-radius: 18px;
   background: var(--ink);
   color: var(--paper);
-  scroll-margin-top: 5rem;
 }
 .contact h2 { font-size: clamp(2rem, 4.2vw, 3.4rem); }
 .cta { margin-top: 1.25rem; max-width: 20ch; font-size: clamp(1.3rem, 2.2vw, 1.75rem); font-stretch: 105%; font-weight: 560; line-height: 1.2; }
@@ -701,7 +698,6 @@ h2 {
   .jump::-webkit-scrollbar { display: none; }
   .theme-toggle { margin-left: auto; width: 2.25rem; height: 2.25rem; }
   html { scroll-padding-top: 6.5rem; }
-  .project, .role, .contact { scroll-margin-top: 6.5rem; }
 
   .intro { grid-template-columns: minmax(0, 1fr); grid-template-areas: "name" "photo" "copy"; }
   .name { font-size: clamp(2.2rem, 12.4vw, 4rem); }

@@ -18,24 +18,18 @@
   sync();
 })();
 
-/* The location graph in the streaming project. Nodes are schematic; PageRank and
-   breadth-first search run on this small graph in the browser. */
+/* The location graph in the streaming project. Nodes are schematic and drawn in the
+   HTML; PageRank and breadth-first search run on that small graph in the browser. */
 (function () {
   var figure = document.querySelector('[data-diagram="graph"]');
   if (!figure) return;
-  var SVG = 'http://www.w3.org/2000/svg';
-  var nodes = {
-    a: [276, 84], b: [356, 50], c: [446, 80], d: [532, 54], e: [300, 176],
-    f: [404, 164], g: [502, 152], h: [334, 262], i: [452, 254], j: [538, 238]
-  };
-  var edges = [
-    ['a', 'b'], ['b', 'c'], ['c', 'd'], ['a', 'e'], ['b', 'f'], ['c', 'f'], ['c', 'g'],
-    ['d', 'g'], ['e', 'f'], ['f', 'g'], ['e', 'h'], ['f', 'h'], ['f', 'i'], ['g', 'i'],
-    ['g', 'j'], ['i', 'j'], ['h', 'i']
-  ];
+  var circles = {};
+  figure.querySelectorAll('.g-node').forEach(function (c) { circles[c.dataset.node] = c; });
+  var lines = Array.prototype.slice.call(figure.querySelectorAll('.g-edge'));
+  var edges = lines.map(function (line) { return line.dataset.edge.split(' '); });
   var from = 'a';
   var to = 'j';
-  var ids = Object.keys(nodes);
+  var ids = Object.keys(circles);
   var adj = {};
   ids.forEach(function (id) { adj[id] = []; });
   edges.forEach(function (e) { adj[e[0]].push(e[1]); adj[e[1]].push(e[0]); });
@@ -75,31 +69,15 @@
     return false;
   }
 
-  var edgeLayer = figure.querySelector('.g-edges');
-  var nodeLayer = figure.querySelector('.g-nodes');
-  edges.forEach(function (e) {
-    var line = document.createElementNS(SVG, 'line');
-    line.setAttribute('class', 'g-edge' + (onPath(e[0], e[1]) ? ' on-path' : ''));
-    line.setAttribute('x1', nodes[e[0]][0]);
-    line.setAttribute('y1', nodes[e[0]][1]);
-    line.setAttribute('x2', nodes[e[1]][0]);
-    line.setAttribute('y2', nodes[e[1]][1]);
-    edgeLayer.appendChild(line);
+  lines.forEach(function (line, n) {
+    if (onPath(edges[n][0], edges[n][1])) line.classList.add('on-path');
   });
-  var circles = {};
-  ids.forEach(function (id) {
-    var c = document.createElementNS(SVG, 'circle');
-    c.setAttribute('class', 'g-node' + (path.indexOf(id) >= 0 ? ' on-path' : ''));
-    c.setAttribute('cx', nodes[id][0]);
-    c.setAttribute('cy', nodes[id][1]);
-    c.setAttribute('r', 8);
-    nodeLayer.appendChild(c);
-    circles[id] = c;
-  });
+  path.forEach(function (id) { circles[id].classList.add('on-path'); });
   [['from', from, -1], ['to', to, 1]].forEach(function (t) {
     var label = figure.querySelector('[data-endpoint="' + t[0] + '"]');
-    label.setAttribute('x', nodes[t[1]][0]);
-    label.setAttribute('y', nodes[t[1]][1] + (t[2] < 0 ? -22 : 34));
+    var c = circles[t[1]];
+    label.setAttribute('x', c.getAttribute('cx'));
+    label.setAttribute('y', +c.getAttribute('cy') + (t[2] < 0 ? -22 : 34));
   });
 
   figure.setRanked = function (on) {
