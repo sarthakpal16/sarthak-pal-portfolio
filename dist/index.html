@@ -318,7 +318,11 @@
   <script>
     (function () {
       var scroller = document.querySelector('.path-scroll');
-      if (scroller) scroller.scrollLeft = scroller.scrollWidth;
+      function showLatest() { scroller.scrollLeft = scroller.scrollWidth; }
+      if (scroller) {
+        showLatest();
+        window.addEventListener('load', showLatest);
+      }
       if (/[?&]sent=1(&|$)/.test(location.search)) {
         document.querySelector('.contact-thanks').hidden = false;
         if (history.replaceState) history.replaceState(null, '', location.pathname + location.hash);
