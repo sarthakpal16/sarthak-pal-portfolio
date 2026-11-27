@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sarthak Pal, full-stack software engineer</title>
   <meta name="description" content="Sarthak Pal is a full-stack software engineer whose work includes transaction data pipelines at Citi and AI-powered employee training at Beganto.">
+  <link rel="canonical" href="https://sarthakpal16.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sarthakpal16.github.io/">
+  <meta property="og:title" content="Sarthak Pal, full-stack software engineer">
+  <meta property="og:description" content="Sarthak Pal is a full-stack software engineer whose work includes transaction data pipelines at Citi and AI-powered employee training at Beganto.">
+  <meta property="og:image" content="https://sarthakpal16.github.io/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sarthak Pal, full-stack software engineer, with a portrait">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#131417" media="(prefers-color-scheme: dark)">
@@ -21,7 +31,7 @@
   <a class="skip" href="#top">Skip to content</a>
 
   <nav class="topbar" aria-label="Sections">
-    <a class="brand" href="#top" aria-label="Sarthak Pal, back to top">SP</a>
+    <a class="brand" href="#top" aria-label="SP, Sarthak Pal, back to top">SP</a>
     <div class="jump">
       <a href="#path">Timeline</a>
       <a href="#skills">Skills</a>
@@ -285,9 +295,12 @@
           <span>Message</span>
           <textarea name="message" rows="5" required></textarea>
         </label>
+        <input type="hidden" name="_next" value="https://sarthakpal16.github.io/?sent=1#contact">
         <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off">
         <button class="send" type="submit">Send message</button>
       </form>
+
+      <p class="contact-thanks" role="status" hidden>Thank you, your message was sent. I will reply to the email you gave.</p>
 
       <ul class="profile-urls" aria-label="Profile links">
         <li>
@@ -303,6 +316,18 @@
   </main>
 
   <script>
+    (function () {
+      var scroller = document.querySelector('.path-scroll');
+      function showLatest() { scroller.scrollLeft = scroller.scrollWidth; }
+      if (scroller) {
+        showLatest();
+        window.addEventListener('load', showLatest);
+      }
+      if (/[?&]sent=1(&|$)/.test(location.search)) {
+        document.querySelector('.contact-thanks').hidden = false;
+        if (history.replaceState) history.replaceState(null, '', location.pathname + location.hash);
+      }
+    })();
     (function () {
       var root = document.documentElement;
       var button = document.querySelector('.theme-toggle');

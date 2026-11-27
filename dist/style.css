@@ -526,3 +526,5 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.contact-thanks { margin-top: 1.25rem; color: var(--ink-strong); font-weight: 500; }
